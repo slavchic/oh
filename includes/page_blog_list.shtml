@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row">
+		<section class="col-md-8">
+			<h2 class="title">Our blog</h2>
+
+			<div class="article_list">
+				<div class="item">
+					<a href="blog_item.shtml">Some long title Lorem ipsum dolor.</a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>
+					<div class="bottom-line">12.06.2016 14:30</div>
+				</div>
+				<div class="item">
+					<a href="blog_item.shtml">Some long title Lorem ipsum dolor.</a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>
+
+					<div class="bottom-line">12.06.2016 14:30</div>
+				</div>
+				<div class="item">
+					<a href="blog_item.shtml">Some long title Lorem ipsum dolor.</a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>
+
+					<div class="bottom-line">12.06.2016 14:30</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+
+
+
+
+

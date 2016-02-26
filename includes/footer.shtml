@@ -1,0 +1,11 @@
+<footer id="footer">
+	<div class="container">
+		<div>© Copyright 2016 by Offnungs zeiten. All rights reserved.</div>
+		<div class="social">
+			<a class="fa fa-facebook-official" href="#"></a>
+			<a class="fa fa-twitter-square" href="#"></a>
+			<a class="fa fa-google-plus-square" href="#"></a>
+			<a class="fa fa-youtube" href="#"></a>
+		</div>
+	</div>
+</footer>

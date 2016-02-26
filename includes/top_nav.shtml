@@ -1,0 +1,29 @@
+<nav id="top_nav">
+
+	<!-- login: 2 states -->
+	<!--#if expr="$page=/index/" -->
+	<a class="login fa fa-sign-in" href="#" id="login_btn" data-toggle="login_modal"></a>
+	<!--#else -->
+	<span class="user_icon dropdown">
+		<a href="#" data-toggle="dropdown" style="background-image: url(images/userpic_sample.jpg)"></a>
+		<span class="dropdown-menu dropdown-menu-right link-list dark">
+			<a href="administration_dashboard.shtml">Dashboard</a>
+			<a href="administration_calendar.shtml">Calendar</a>
+			<a href="administration_account.shtml">Account</a>
+			<a href="#logout">Logout</a>
+		</span>
+	</span>
+	<!--#endif -->
+
+	<a class="search_toggle fa fa-search" href="#"></a>
+	<span class="dropdown">
+		<button class="fa fa-bars" data-toggle="dropdown"></button>
+		<span class="dropdown-menu dropdown-menu-right link-list dark">
+
+				<a href="#" data-toggle="login_modal">Sign in</a>
+				<a href="registration.shtml">Register</a>
+
+		</span>
+
+	</span>
+</nav>

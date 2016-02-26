@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="favicon.ico">
+	<title>Öffnungszeiten.ch</title>
+
+	<script src="js/main.js"></script>
+
+
+	<!--#if expr="$page=/index/" -->
+		<script src="js/page_index.js"></script>
+	<!--#endif -->
+
+	<!--#if expr="$page=/details/" -->
+		<script src="js/page_details.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=places"></script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-546eac641c41ca72" async="async"></script>
+	<!--#endif -->
+
+	<!--#if expr="$page=/registration/" -->
+		<script src="js/plugins/validate/jquery.validate.js"></script>
+		<!--<script src="js/plugins/validate/localization/messages_de.min.js"></script>-->
+
+		<script src="js/plugins/bootstrap-toggle.min.js"></script>
+
+		<!--<script src="js/plugins/select2/select2_locale_de.js"></script>-->
+
+		<script src="js/page_registration.js"></script>
+		<link rel="stylesheet" href="js/plugins/select2/select2.css"/>
+	<!--#endif -->
+
+	<!--#if expr="$page=/administration/" -->
+		<script src="js/plugins/validate/jquery.validate.js"></script>
+		<!--<script src="js/plugins/validate/localization/messages_de.min.js"></script>-->
+		<script src="js/plugins/bootstrap-toggle.min.js"></script>
+		<script src="js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+
+		<!--<script src="js/plugins/select2/select2_locale_de.js"></script>-->
+		<link rel="stylesheet" href="js/plugins/select2/select2.css"/>
+	<!--#endif -->
+
+	<!--#if expr="$page=/administration_calendar/" -->
+		<!--<link rel="stylesheet" href="js/plugins/bootstrap-calendar/css/calendar.min.css"/>-->
+		<!--<script src="js/plugins/bootstrap-calendar/components/underscore/underscore-min.js"></script>-->
+		<!--<script type="text/javascript" src="js/plugins/bootstrap-calendar/components/jstimezonedetect/jstz.min.js"></script>-->
+		<!--<script src="js/plugins/bootstrap-calendar/js/calendar.js"></script>-->
+		<!--<script src="vendor/bootstrap-calendar-master/js/language/de-DE.js"></script>-->
+		<script src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
+		<link rel="stylesheet" href="js/plugins/fullcalendar/fullcalendar.css"/>
+
+		<script src="js/page_administration_calendar.js"></script>
+	<!--#endif -->
+
+	<!--#if expr="$page=/administration_add_company_step1/" -->
+		<script src="js/plugins/plupload/js/moxie.min.js"></script>
+		<script src="js/plugins/plupload/js/plupload.min.js"></script>
+		<script src="js/page_administration_add_company_step1.js"></script>
+	<!--#endif -->
+
+
+	<!--#if expr="$page=/administration_add_company_step2/" -->
+		<script src="js/page_administration_add_company_step2.js"></script>
+	<!--#endif -->
+
+	<!--#if expr="$page=/administration_account/" -->
+		<script src="js/plugins/plupload/js/moxie.min.js"></script>
+		<script src="js/plugins/plupload/js/plupload.min.js"></script>
+		<script src="js/page_administration_account.js"></script>
+	<!--#endif -->
+
+	<script src="js/custom.js"></script>
+	<link rel="stylesheet" href="/css/main.css"/>
+
+</head>
+<body class='page_<!--#echo encoding="none" var="page" -->'>
+
+	<!--#if expr="$page!=/index/" -->
+		<!--#include virtual="header.shtml" -->
+	<!--#endif -->
+
+	<section id="main">
+		<!--#include virtual="page_$page.shtml" -->
+	</section>
+
+	<!--#include virtual="bottom_nav.shtml" -->
+	<!--#include virtual="footer.shtml" -->
+
+	<!-- ^ modals ^ -->
+	<div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="login_modal" aria-hidden="true">
+		<div class="modal-dialog modal-login">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Sign in with:</h4>
+				</div>
+				<div class="modal-body">
+					<div class="social row text-center">
+						<div class="col-sm-4">
+							<a href="#" class="btn btn-primary db btn_facebook" title="Facebook"><i class="fa fa-facebook"></i></a></div>
+						<div class="col-sm-4">
+							<a href="#" class="btn btn-primary db btn_twitter" title="Twitter"><i class="fa fa-twitter"></i></a>
+						</div>
+						<div class="col-sm-4">
+							<a href="#" class="btn btn-primary db btn_google_plus" title="Google plus"><i class="fa fa-google-plus"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<form action="administration_dashboard.shtml" id="login_modal_basic_form">
+						<input type="email" class="form-control mb15" placeholder="E-mail"/>
+						<input type="password" class="form-control mb15" placeholder="Password"/>
+						<button type="submit" class="btn btn-primary">Login</button>
+						<span class="fleft text-left bottom_links">
+							<a href="#" id="login_modal_forgot_btn">Forgot password</a><br>
+							<a href="registration.shtml">Register</a>
+						</span>
+					</form>
+					<form action="#" id="login_modal_forgot_form" style="display: none">
+						<input type="email" class="form-control mb15" placeholder="E-mail"/>
+						<button type="submit" class="btn btn-primary">Recover password</button>
+						<span class="fleft text-left bottom_links">
+							<a href="#" id="login_modal_back_to_login_btn">Back to login form</a><br>
+						</span>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="large_modal" tabindex="-1" role="dialog" aria-labelledby="large_modal" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content"></div>
+		</div>
+	</div>
+	<div class="modal fade" id="small_modal" tabindex="-1" role="dialog" aria-labelledby="small_modal" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"></div>
+		</div>
+	</div>
+	<div class="modal fade" id="calendar-events-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3 class="modal-title">Event</h3>
+				</div>
+				<div class="modal-body" style="height: 400px">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- / modals / -->
+
+</body>
+</html>

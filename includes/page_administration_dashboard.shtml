@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+		<section class="col-md-8 administration">
+			<!--#include virtual="administration_nav.shtml" -->
+
+			<div class="col-md-12 clearfix pb30 mb30 divider_b">
+				<a class="btn btn-primary btn-lg pull-right" href="../administration_add_company_step1.shtml"><i class="fa fa-plus"></i> Add your Store</a>
+				You have no companies yet.<br><span class="text-info">Please feel free to press the button <i class="fa fa-arrow-right"></i></span>
+			</div>
+			<div class="listing">
+				<!--#set var="company_status" value="closed" -->
+				<!--#include virtual="listing_item_administration.shtml" -->
+				<!--#include virtual="listing_item_administration.shtml" -->
+				<!--#set var="company_status" value="open" -->
+				<!--#include virtual="listing_item_administration.shtml" -->
+			</div>
+
+		</section>
+
+		<div class="col-md-4">
+			<!--<h2 class="title">Little help</h2>-->
+			<!--<div class="col-sm-12">-->
+				<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>-->
+				<!--<p>Lorem ipsum dolor sit amet, repellendus?</p>-->
+			<!--</div>-->
+
+		</div>
+	</div>
+</div>
+
+
+
+
+

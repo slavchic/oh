@@ -1,0 +1,130 @@
+<div class="container">
+	<div class="row">
+		<section class="col-md-8 administration">
+			<!--#include virtual="administration_nav.shtml" -->
+			<div class="col-md-12">
+				<form id="account_form" method="post" action="administration_account.shtml">
+					<div class="clearfix">
+						<div class="col-sm-4">
+							
+							<div class="thumbnail"><img src="images/placeholder_user_image.png" alt="" id="upload_userpic"/></div>
+							
+						</div>
+						<div class="col-sm-8">
+							<div class="btn btn-danger pull-right" id="password_change_toggle" data-cancel-txt="Cancel">Change password</div>
+							<div class="clearfix"></div>
+							<div class="row mt10" style="display: none" id="password_change_cont">
+								<div class="col-sm-6">
+									<div class="form-group validation required">
+										<label>Password</label>
+										<input type="password" name="password" id="reg_from_password" class="form-control" placeholder="Password">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group validation required">
+										<label>Password repeat</label>
+										<input type="password" name="password_repeat" id="reg_from_password_repeat" class="form-control" placeholder="Password repeat">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="clearfix">
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>Name</label>
+								<input type="text" name="name" class="form-control" placeholder="Name">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>Surname</label>
+								<input type="text" name="surname" class="form-control" placeholder="Surname">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>Email address</label>
+								<input type="email" name="email" class="form-control" placeholder="Email">
+							</div>
+						</div>
+
+					</div>
+					<h3>Default company address</h3>
+					<div class="clearfix">
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>Country</label>
+								<select name="country" class="select2 form-control" placeholder="Select country">
+									<option value=""></option>
+									<option value="1">Germany</option>
+									<option value="2">Austria</option>
+									<option value="3">Switzerland</option>
+									<option value="4">Russia</option>
+									<option value="5">Etc...</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>City</label>
+								<input type="text" name="city" class="form-control" placeholder="City">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>ZIP </label>
+								<input type="text" name="zip" class="form-control" placeholder="Zip code">
+							</div>
+						</div>
+						<div class="col-sm-8">
+							<div class="form-group validation required">
+								<label>Address</label>
+								<input type="text" name="address" class="form-control" placeholder="Address">
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-sm-4">
+							<div class="form-group validation">
+								<label>Phone</label>
+								<input type="text" name="Phone" class="form-control" placeholder="Phone">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation">
+								<label>Mobile</label>
+								<input type="text" name="Mobile" class="form-control" placeholder="Mobile">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation">
+								<label>Web site</label>
+								<input type="text" name="url" class="form-control" placeholder="www.example.com">
+							</div>
+						</div>
+
+					</div>
+					<div class="divider_t clearfix mt20 pt20">
+						<div class="col-sm-12 text-right">
+							<button type="submit" class="btn btn-lg btn-primary">Update</button>
+							<a href="administration_dashboard.shtml" class="btn btn-lg btn-default">Cancel</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+		<div class="col-md-4">
+			<!--<h2 class="title">Little help</h2>-->
+			<!--<div class="col-sm-12">-->
+			<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>-->
+			<!--<p>Lorem ipsum dolor sit amet, repellendus?</p>-->
+			<!--</div>-->
+		</div>
+	</div>
+</div>
+
+
+
+
+

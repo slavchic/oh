@@ -1,0 +1,105 @@
+<div class="container">
+	<div class="row">
+		<section class="col-md-8">
+			<h2 class="title">Some blog super long super long title</h2>
+			<article>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam minus non reprehenderit sit tempore? Ab ad aliquid doloribus, est nihil officia perspiciatis quisquam rerum sint veniam! A atque corporis, dignissimos, dolor esse expedita explicabo fugiat illo modi nam natus neque possimus quam reiciendis, reprehenderit tempora tenetur veniam voluptas! Ducimus, repudiandae!</p>
+				<ul>
+					<li>Some item</li>
+					<li>Some item</li>
+					<li>Some item</li>
+					<li>Some item</li>
+				</ul>
+				<div class="row">
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="http://g03.a.alicdn.com/kf/HTB1hr_.JXXXXXaraXXXq6xXFXXXS/Pet-wig-font-b-funny-b-font-font-b-cat-b-font-wig-Orang-Hair.jpg">
+
+							<div class="caption">
+								<h3>Kitty</h3>
+								<p>Cute kitty</p>
+								<p><a href="#" class="btn btn-primary" role="button">Button</a>
+									<a href="#" class="btn btn-default" role="button">Button</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="https://cdn0.artstation.com/p/assets/images/images/001/477/512/smaller_square/kresimir-jelusic-091115-space-station-one-1920x1080.jpg?1447115984">
+
+							<div class="caption">
+								<h3>Kitty 2</h3>
+								<p>Cute kitty 2</p>
+								<p><a href="#" class="btn btn-primary" role="button">Button</a>
+									<a href="#" class="btn btn-default" role="button">Button</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="https://cdn3.artstation.com/p/assets/images/images/001/073/283/20150813023018/smaller_square/jaemus-wurzbach-jaemus-masseffect3-phantom-game.jpg?1439451018">
+
+							<div class="caption">
+								<h3>Kitty 3</h3>
+								<p>Cute kitty 3</p>
+								<p><a href="#" class="btn btn-primary" role="button">Button</a>
+									<a href="#" class="btn btn-default" role="button">Button</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, placeat repudiandae? Aliquam amet animi commodi cumque delectus ex expedita fugiat impedit labore maiores modi molestias, officia omnis placeat quae quo reiciendis sequi veniam voluptas voluptatem? A architecto, consequatur culpa cupiditate eos eveniet fuga hic incidunt ipsa maiores minus mollitia necessitatibus nihil nisi, nostrum perferendis quis quisquam quod suscipit veritatis vero.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dignissimos ducimus enim eos laudantium porro quia repellendus similique temporibus veritatis.</p>
+				<h3>Additional title</h3>
+
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deserunt eius est excepturi facere, facilis fuga incidunt iste itaque iure libero mollitia odit quidem quo quod quos sapiente sint velit?</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ex laudantium omnis optio ut. Ad aspernatur atque aut autem, beatae consequatur culpa cumque excepturi facilis fugiat iusto maiores molestiae nesciunt nostrum officia quibusdam quod sequi sint tempora unde velit, vitae!</p>
+
+				<div class="row">
+					<div class="col-md-4">
+						<a href="#" class="btn btn-primary"><i class="fa fa-arrow-left mr5"></i> Previous article</a>
+					</div>
+					<div class="col-md-4 text-center">
+						<a href="blog_list.shtml" class="btn btn-default"><i class="fa fa-arrow-circle-up mr5"></i> Back to list</a>
+					</div>
+					<div class="col-md-4 text-right">
+						<a href="#" class="btn btn-primary">Next article <i class="fa fa-arrow-right ml5"></i></a>
+					</div>
+
+				</div>
+			</article>
+		</section>
+
+		<div class="col-md-4">
+			<h2 class="title">Read more</h2>
+			<div class="article_list">
+				<div class="item">
+					<a href="blog_item.shtml">Some long title Lorem ipsum dolor.</a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>
+
+					<div class="bottom-line">12.06.2016 14:30</div>
+				</div>
+				<div class="item">
+					<a href="blog_item.shtml">Some long title Lorem ipsum dolor.</a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>
+
+					<div class="bottom-line">12.06.2016 14:30</div>
+				</div>
+				<div class="item">
+					<a href="blog_item.shtml">Some long title Lorem ipsum dolor.</a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>
+
+					<div class="bottom-line">12.06.2016 14:30</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+

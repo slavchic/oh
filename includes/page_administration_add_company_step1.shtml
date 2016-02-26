@@ -1,0 +1,214 @@
+<div class="container">
+	<div class="row">
+		<section class="col-md-8 administration">
+			<!--#include virtual="administration_nav.shtml" -->
+
+			<div class="col-md-12 clearfix pb30 mb30 divider_b">
+				<a class="btn btn-default pull-right" href="administration_dashboard.shtml"><i class="fa fa-chevron-left"></i> Cancel and back to list</a>
+				<h2 class="nm">Adding company</h2>
+			</div>
+			<div class="col-md-12">
+				<form id="add_company_form" method="post" action="administration_add_company_step2.shtml">
+					<div class="clearfix mb30 divider_b">
+						<div class="col-sm-4"><label>Company logo</label>
+							<div class="thumbnail mt5"><img src="images/placeholder_company_image.png" alt="" id="upload_userpic"/></div>
+						</div>
+						<div class="col-sm-8">
+							<div class="col-sm-12">
+								<div class="form-group validation required">
+									<label>Company name</label>
+									<input type="text" name="company_name" class="form-control" placeholder="Company name">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group validation required">
+									<label>Description</label>
+									<textarea class="form-control" name="description" id="" rows="2" placeholder="Description"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="mt0">Activities</h3>
+
+					<div class="mb30 pb30 divider_b">
+						<div id="checkactivity" class="activity clearfix validation">
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries9" value="9" checked="checked" name="industry"><label for="IndustryIndustries9">Apotheke, Drogerie</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries28" value="28" name="industry"><label for="IndustryIndustries28">Fitness, Solarium, Sauna</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries25" value="25" checked="checked" name="industry"><label for="IndustryIndustries25">Arzt, Medizin, Physio</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries4490" value="4490" name="industry"><label for="IndustryIndustries4490">Hotel, Pension, Unterkunft</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries10" value="10" name="industry"><label for="IndustryIndustries10">Ausstellung, Museum, Expo</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries23" value="23" name="industry"><label for="IndustryIndustries23">Kino, Theater, Spiele</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries24" value="24" checked="checked" name="industry"><label for="IndustryIndustries24">Auto, Garage</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries7224" value="7224" name="industry"><label for="IndustryIndustries7224">Kosmetik, Schönheit</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries4878" value="4878" name="industry"><label for="IndustryIndustries4878">Bäckerei, Konditorei</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries27" value="27" name="industry"><label for="IndustryIndustries27">Optik, Brillen</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries21" value="21" name="industry"><label for="IndustryIndustries21">Bank, Finanzen, Consulting</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries19" value="19" name="industry"><label for="IndustryIndustries19">Post &amp; Logistik</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries14" value="14" name="industry"><label for="IndustryIndustries14">Bau, Handwerk</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries11" value="11" name="industry"><label for="IndustryIndustries11">Restaurant, Bar, Café</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries17" value="17" name="industry"><label for="IndustryIndustries17">Bekleidung, Mode</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries26" value="26" name="industry"><label for="IndustryIndustries26">Schmuck, Luxus, Uhren</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries15" value="15" name="industry"><label for="IndustryIndustries15">Blumengeschäft, Florist</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries4381" value="4381" name="industry"><label for="IndustryIndustries4381">Spirituosen, Tabak</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries22" value="22" name="industry"><label for="IndustryIndustries22">Casino, Spielsalon</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries29" value="29" name="industry"><label for="IndustryIndustries29">Sport, Sportbekleidung</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries16" value="16" name="industry"><label for="IndustryIndustries16">Coiffeur</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries4491" value="4491" name="industry"><label for="IndustryIndustries4491">Tankstelle</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries12" value="12" name="industry"><label for="IndustryIndustries12">Discothek, Tanzlokal</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries4382" value="4382" name="industry"><label for="IndustryIndustries4382">Waren- Allgemeinladen</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries13" value="13" name="industry"><label for="IndustryIndustries13">Eigenheim, Garten, Möbel</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries31" value="31" name="industry"><label for="IndustryIndustries31">Wellness, SPA, Massage</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries18" value="18" name="industry"><label for="IndustryIndustries18">Einkaufen, tägl. Bedarf</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries32" value="32" name="industry"><label for="IndustryIndustries32">Öffentliche Einrichtung &amp; Amt</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries4380" value="4380" name="industry"><label for="IndustryIndustries4380">Elektronik, Informatik, Tel.</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries3" value="3" name="industry"><label for="IndustryIndustries3">Andere</label>
+							</div>
+							<div class="col-sm-6">
+								<input type="checkbox" id="IndustryIndustries20" value="20" name="industry"><label for="IndustryIndustries20">Erotik</label>
+							</div>
+						</div>
+
+					</div>
+
+					<button type="button" id="setDefaultAddressBtn" class="btn btn-info pull-right" data-default-address="country=1,city=Berlin,zip=8001,address=Moskow Str. 123,phone=+123112312323,mobile=+9823747234,url=http://www.example.com">Use default address</button>
+					<h3 class="mt0">Company address</h3>
+
+					<div class="clearfix">
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>Country</label>
+								<select name="country" class="select2 form-control" placeholder="Select country">
+									<option value=""></option>
+									<option value="1">Germany</option>
+									<option value="2">Austria</option>
+									<option value="3">Switzerland</option>
+									<option value="4">Russia</option>
+									<option value="5">Etc...</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>City</label>
+								<input type="text" name="city" class="form-control" placeholder="City">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>ZIP </label>
+								<input type="text" name="zip" class="form-control" placeholder="Zip code">
+							</div>
+						</div>
+						<div class="col-sm-8">
+							<div class="form-group validation required">
+								<label>Address</label>
+								<input type="text" name="address" class="form-control" placeholder="Address">
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-sm-4">
+							<div class="form-group validation">
+								<label>Phone</label>
+								<input type="text" name="phone" class="form-control" placeholder="Phone">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation">
+								<label>Mobile</label>
+								<input type="text" name="mobile" class="form-control" placeholder="Mobile">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group validation">
+								<label>Web site</label>
+								<input type="text" name="url" class="form-control" placeholder="www.example.com">
+							</div>
+						</div>
+					</div>
+					<div class="divider_t clearfix mt20 pt20">
+						<div class="col-sm-12 text-right">
+							<a href="administration_dashboard.shtml" class="btn btn-lg btn-default mr10">Cancel</a>
+							<button type="submit" class="btn btn-lg btn-primary">Next step <i class="fa fa-chevron-right"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</section>
+
+		<div class="col-md-4">
+			<!--<h2 class="title">Little help</h2>-->
+			<!--<div class="col-sm-12">-->
+				<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>-->
+				<!--<p>Lorem ipsum dolor sit amet, repellendus?</p>-->
+			<!--</div>-->
+
+		</div>
+	</div>
+</div>
+
+
+
+
+

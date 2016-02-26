@@ -1,0 +1,36 @@
+<div class="item">
+	<div class="info">
+		<a href="#" class="title">Lorem ipsum dolor sit amet</a>
+		<address>Santa Claus Sht. 51</address>
+		<!--#if expr="$company_status=closed" -->
+		<div class="footer">
+			<img src="https://www.times.ch/images/opening/Starbucks_Coffee_2dc6b497.jpg" alt="" class="logo"/>
+			<span class="status closed"><i class="fa fa-lock"></i>Geschlossen</span>
+		</div>
+		<!--#else -->
+		<div class="footer">
+			<img src="https://www.times.ch/images/opening/Moebel_Pfister_AG_3e36dbcd.jpg" alt="" class="logo"/>
+			<span class="status open"><i class="fa fa-check"></i>Open</span>
+		</div>
+		<!--#endif -->
+	</div>
+	<div class="hours">
+		<div class="today">
+			<div>Heute</div>
+			<div>09:00 - 21:00<br>
+				09:00 - 21:00
+			</div>
+		</div>
+		<div>
+			<div>Morgen</div>
+			<div>09:00 - 21:00<br>
+				09:00 - 21:00
+			</div>
+		</div>
+	</div>
+	<div class="details">
+		<a href="../administration_add_company_step1.shtml" class="button">Modify</a>
+		<a href="#" class="button default sm mt5 more"><i class="fa fa-clock-o"></i> Schedule</a>
+		<a href="#" class="button sm mt5 danger more"><i class="fa fa-times"></i> Delete</a>
+	</div>
+</div>

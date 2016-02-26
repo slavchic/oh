@@ -1,0 +1,28 @@
+<div class="container" id="bottom_nav">
+	<div class="row">
+		<div class="col-md-3">
+			<h3>About us</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis dignissimos ex fugiat, ullam voluptatem.</p><p> deleniti deserunt eum facilis harum illum, inventore maxime quasi quibusdam quidem repellendus temporibus unde vel veniam, voluptate. Aliquam aperiam, doloremque explicabo, itaque laborum, mollitia nesciunt nostrum perspiciatis quae quos vitae voluptate voluptatem. Ab aliquid amet aperiam beatae, consectetur deserunt nemo nobis quo sed velit?</p>
+		</div>
+		<div class="col-md-3">
+			<h3>Useful links</h3>
+			<div class="link-list light">
+				<a href="blog_list.shtml">Our blog</a>
+				<a href="blog_item.shtml">Lorem ipsum</a>
+				<a href="#">Lorem ipsum</a>
+				<a href="#">Lorem ipsum dolor</a>
+				<a href="#">Lorem ipsum</a>
+				<a href="#">Lorem ipsum dolor</a>
+			</div>
+		</div>
+		<div class="col-md-3"></div>
+		<div class="col-md-3">
+			<h3>Latest tweets</h3>
+			<div class="tweet-list light">
+				<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="time">about a hour ago</span></a>
+				<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="time">about a hour ago</span></a>
+				<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="time">about a hour ago</span></a>
+			</div>
+		</div>
+	</div>
+</div>

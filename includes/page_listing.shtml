@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="row">
+		<section class="col-md-8">
+			<h2 class="title">Opening hours listing</h2>
+
+			<div class="listing">
+				<!--#include virtual="listing_item.shtml" -->
+
+				<!-- randomizing status -->
+				<!--#set var="company_status" value="closed" -->
+					<!--#include virtual="listing_item.shtml" -->
+
+				<!--#include virtual="listing_item.shtml" -->
+
+				<!--#set var="company_status" value="open" -->
+					<!--#include virtual="listing_item.shtml" -->
+
+			</div>
+
+			<div class="bn mt30 mb30" style="height: 100px;"></div>
+
+			<div class="listing">
+
+				<!--#set var="company_status" value="closed" -->
+					<!--#include virtual="listing_item.shtml" -->
+					<!--#include virtual="listing_item.shtml" -->
+
+				<!--#set var="company_status" value="open" -->
+					<!--#include virtual="listing_item.shtml" -->
+					<!--#include virtual="listing_item.shtml" -->
+
+			</div>
+			<nav class="mb30">
+				<ul class="pagination pagination-lg">
+					<li class="disabled">
+						<a href="#" class="fa fa-chevron-left"></a>
+					</li>
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li>
+						<a href="#" class="fa fa-chevron-right">
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<aside class="col-md-4">
+			<!--#include virtual="aside.shtml" -->
+		</aside>
+	</div>
+</div>

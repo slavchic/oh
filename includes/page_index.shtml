@@ -1,0 +1,51 @@
+<div class="top_wrapper">
+	<div class="container">
+		<!--#include virtual="top_nav.shtml" -->
+		<div class="logo"></div>
+	</div>
+</div>
+<div class="search_wrapper">
+	<div class="container">
+		<h2>Looking for opening hours?</h2>
+		<form class="search_box" action="listing.shtml">
+			<input type="text" name="what" placeholder="What?"/>
+			<input type="text" name="where" placeholder="Where?"/>
+			<button type="submit" class="fa fa-search"></button>
+		</form>
+	</div>
+</div>
+<div class="links_wrapper">
+	<div class="container">
+		<div class="item"><a href="listing.shtml" class="fa fa-cutlery"></a>
+
+			<h3>Some ultra big title</h3>
+			<a href="listing.shtml">Some link 1</a>, <a href="listing.shtml">Some link 2</a>, <a href="listing.shtml">Some link 3</a>, <a href="listing.shtml">Some link 4</a>, <a href="listing.shtml">Some link 5</a><a href="listing.shtml" class="more">More</a>
+		</div>
+		<div class="item"><a href="listing.shtml" class="fa fa-shopping-basket"></a>
+
+			<h3>Some ultra big title</h3>
+			<a href="listing.shtml">Some link 1</a>, <a href="listing.shtml">Some link 2</a>, <a href="listing.shtml">Some link 3</a>, <a href="listing.shtml">Some link 4</a>, <a href="listing.shtml">Some link 5</a><a href="listing.shtml" class="more">More</a>
+		</div>
+		<div class="item"><a href="listing.shtml" class="fa fa-bank"></a>
+
+			<h3>Some ultra big title</h3>
+			<a href="listing.shtml">Some link 1</a>, <a href="listing.shtml">Some link 2</a>, <a href="listing.shtml">Some link 3</a>, <a href="listing.shtml">Some link 4</a>, <a href="listing.shtml">Some link 5</a><a href="listing.shtml" class="more">More</a>
+		</div>
+
+		<div class="item"><a href="listing.shtml" class="fa fa-wrench"></a>
+
+			<h3>Some ultra big title</h3>
+			<a href="listing.shtml">Some link 1</a>, <a href="listing.shtml">Some link 2</a>, <a href="listing.shtml">Some link 3</a>, <a href="listing.shtml">Some link 4</a>, <a href="listing.shtml">Some link 5</a><a href="listing.shtml" class="more">More</a>
+		</div>
+		<div class="item"><a href="listing.shtml" class="fa fa-magic"></a>
+
+			<h3>Some ultra big title</h3>
+			<a href="listing.shtml">Some link 1</a>, <a href="listing.shtml">Some link 2</a>, <a href="listing.shtml">Some link 3</a>, <a href="listing.shtml">Some link 4</a>, <a href="listing.shtml">Some link 5</a><a href="listing.shtml" class="more">More</a>
+		</div>
+		<div class="item"><a href="listing.shtml" class="fa fa-pagelines"></a>
+
+			<h3>Some ultra big title</h3>
+			<a href="listing.shtml">Some link 1</a>, <a href="listing.shtml">Some link 2</a>, <a href="listing.shtml">Some link 3</a>, <a href="listing.shtml">Some link 4</a>, <a href="listing.shtml">Some link 5</a><a href="listing.shtml" class="more">More</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,2 @@
+<!--#set var="page" value="blog_list" -->
+<!--#include virtual="includes/_.shtml" -->

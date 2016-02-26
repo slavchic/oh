@@ -1,0 +1,2 @@
+<!--#set var="page" value="administration_dashboard" -->
+<!--#include virtual="includes/_.shtml" -->

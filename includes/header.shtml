@@ -1,0 +1,13 @@
+<header id="header">
+	<div class="container">
+		<!--#include virtual="top_nav.shtml" -->
+		<a class="logo" href="/">Öffnungszeiten.ch</a>
+
+		<form class="search_box" action="listing.shtml">
+			<input type="text" name="what" placeholder="What?"/>
+			<input type="text" name="where" placeholder="Where?"/>
+			<button type="submit" class="fa fa-search"></button>
+		</form>
+
+	</div>
+</header>

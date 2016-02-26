@@ -1,0 +1,119 @@
+<div class="container">
+	<div class="row">
+		<section class="col-md-8 administration">
+			<!--#include virtual="administration_nav.shtml" -->
+
+			<div class="col-md-12 clearfix pb30 mb30 divider_b">
+				<a class="btn btn-default pull-right" href="administration_dashboard.shtml"><i class="fa fa-chevron-left"></i> Cancel and back to list</a>
+				<h2 class="nm">Adding company - <span class="text-info">Opening hours</span></h2>
+			</div>
+			<div class="col-md-12">
+				<form id="add_company_form" method="post" action="administration_dashboard.shtml">
+					<div class="clearfix mb30">
+						<div class="row mb30">
+							<div class="clearfix" data-day-container="monday">
+								<b class="col-sm-3">Monday</b>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="monday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="monday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger hidden" title="Remove interval" data-interval="remove"><i class="fa fa-minus-circle"></i></button>
+									<button type="button" class="btn btn-primary" title="Add interval" data-interval="add"><i class="fa fa-plus-circle"></i></button>
+								</div>
+							</div>
+						</div>
+						<div class="row mb30">
+							<div class="clearfix" data-day-container="tuesday">
+								<b class="col-sm-3">Tuesday</b>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="tuesday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="tuesday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger hidden" title="Remove interval" data-interval="remove"><i class="fa fa-minus-circle"></i></button>
+									<button type="button" class="btn btn-primary" title="Add interval" data-interval="add"><i class="fa fa-plus-circle"></i></button>
+								</div>
+							</div>
+						</div>
+
+						<div class="row mb30">
+							<div class="clearfix" data-day-container="wednesday">
+								<b class="col-sm-3">Wednesday</b>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="wednesday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="wednesday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger hidden" title="Remove interval" data-interval="remove"><i class="fa fa-minus-circle"></i></button>
+									<button type="button" class="btn btn-primary" title="Add interval" data-interval="add"><i class="fa fa-plus-circle"></i></button>
+								</div>
+							</div>
+						</div>
+						<div class="row mb30">
+							<div class="clearfix" data-day-container="thursday">
+								<b class="col-sm-3">Thursday</b>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="thursday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="thursday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger hidden" title="Remove interval" data-interval="remove"><i class="fa fa-minus-circle"></i></button>
+									<button type="button" class="btn btn-primary" title="Add interval" data-interval="add"><i class="fa fa-plus-circle"></i></button>
+								</div>
+							</div>
+						</div>
+						<div class="row mb30">
+							<div class="clearfix" data-day-container="friday">
+								<b class="col-sm-3">Friday</b>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="friday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="friday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger hidden" title="Remove interval" data-interval="remove"><i class="fa fa-minus-circle"></i></button>
+									<button type="button" class="btn btn-primary" title="Add interval" data-interval="add"><i class="fa fa-plus-circle"></i></button>
+								</div>
+							</div>
+						</div>
+						<div class="row mb30">
+							<div class="clearfix" data-day-container="saturday">
+								<b class="col-sm-3">Saturday</b>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="saturday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="saturday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger hidden" title="Remove interval" data-interval="remove"><i class="fa fa-minus-circle"></i></button>
+									<button type="button" class="btn btn-primary" title="Add interval" data-interval="add"><i class="fa fa-plus-circle"></i></button>
+								</div>
+							</div>
+						</div>
+						<div class="row mb30">
+							<div class="clearfix" data-day-container="sunday">
+								<b class="col-sm-3">Sunday</b>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="sunday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-3"><input type="text" autocomplete="off" name="sunday" class="form-control datetimepicker"/></div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger hidden" title="Remove interval" data-interval="remove"><i class="fa fa-minus-circle"></i></button>
+									<button type="button" class="btn btn-primary" title="Add interval" data-interval="add"><i class="fa fa-plus-circle"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="divider_t clearfix mt20 pt20">
+						<div  class="col-sm-12 text-right">
+							<a href="administration_dashboard.shtml" class="btn btn-lg btn-default mr10">Cancel</a>
+							<button type="submit" class="btn btn-lg btn-primary">Finish <i class="fa fa-check"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</section>
+
+		<div class="col-md-4">
+			<!--<h2 class="title">Little help</h2>-->
+			<!--<div class="col-sm-12">-->
+				<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>-->
+				<!--<p>Lorem ipsum dolor sit amet, repellendus?</p>-->
+			<!--</div>-->
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
