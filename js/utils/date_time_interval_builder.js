@@ -93,7 +93,6 @@ DateTimeIntervalsBuilder = function() {
 
 			$cont.after($newIntervalCont)
 		} else {
-			dbg('$cont', $cont)
 			$cont.remove()
 		}
 		o.updateIntervalBtns($contParent)
