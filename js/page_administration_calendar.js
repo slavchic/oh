@@ -1,4 +1,8 @@
 $(function () {
+	var openEventEditor  = function () {
+		$('#calendar-events-modal').modal('show')
+		return false
+	}
 
 	var calendar = $('#calendar').fullCalendar({
 		firstDay:1,
@@ -16,9 +20,7 @@ $(function () {
 		customButtons: {
 			addEvent: {
 				text: 'Add event!',
-				click: function () {
-					alert('Add event modal');
-				}
+				click: openEventEditor
 			}
 		},
 		selectable: true,
@@ -87,12 +89,6 @@ $(function () {
 
 	$('#calendar .fc-button').removeClass('fc-button fc-state-default fc-corner-left fc-corner-right').addClass('btn btn-primary')
 	$('#calendar .fc-addEvent-button').addClass('btn-lg')
-
-	$('[data-toggle="login_modal"]').click(function () {
-			$('#login_modal').modal('show')
-			return false
-		}
-	)
 
 })
 

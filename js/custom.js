@@ -49,7 +49,9 @@ $(function () {
 		if (for_inp) for_inp.checked = !for_inp.checked
 	})
 
-	$(".select2").select2()
+	$(".select2").select2({
+		width:'100%'
+	})
 
 	$('select.select2').on('change', function () {
 		$(this).trigger('blur')

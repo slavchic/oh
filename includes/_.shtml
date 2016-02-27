@@ -62,6 +62,7 @@
 
 
 	<!--#if expr="$page=/administration_add_company_step2/" -->
+		<script src="js/utils/date_time_interval_builder.js"></script>
 		<script src="js/page_administration_add_company_step2.js"></script>
 	<!--#endif -->
 
@@ -141,21 +142,11 @@
 			<div class="modal-content"></div>
 		</div>
 	</div>
-	<div class="modal fade" id="calendar-events-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h3 class="modal-title">Event</h3>
-				</div>
-				<div class="modal-body" style="height: 400px">
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
+
+	<!--#if expr="$page=/administration_calendar/" -->
+	<!--#include virtual="calendar_event_editor.shtml" -->
+	<!--#endif -->
+
 	<!-- / modals / -->
 
 </body>
