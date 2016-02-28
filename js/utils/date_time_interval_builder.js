@@ -1,5 +1,20 @@
-DateTimeIntervalsBuilder = function() {
-	var o = this;
+$.fn.dateTimeIntervalsBuilder = function(options) {
+
+	var o = {};
+
+	o.$source_container = this;
+
+	o.name = options.name;
+	o.type = options.type;
+	o.title = options.title;
+	o.maxTimeIntervals = (options.maxTimeIntervals) ? options.maxTimeIntervals : 3;
+
+	o.intervalContainersCount = 0;
+
+	o.dom = {
+		intervalContainers:{},
+		$cont: $('<div class="row mb30">')
+	}
 
 	o.datetimepickerOptions =  {
 		time: {
@@ -13,95 +28,189 @@ DateTimeIntervalsBuilder = function() {
 		day: {}
 	}
 
-	o.maxTimeIntervals = 3;
-
-	o.init = function() {
-		$('body').on('click', 'button[data-interval]', o.addRemoveTimeInterval)
-		return o
-	}
-
-	o.buildIntervals = function (name, type, title) {
-		var $cont = $('<div class="row mb30">'),
-				$wrapper = $('<div class="clearfix" data-' + type + '-container="' + name + '">'),
-				$label = $('<b class="col-sm-3">' + title + ' </b>'),
-				$inp_cont_1 = $('<div class="col-sm-3">'),
-				$inp_cont_2 = $('<div class="col-sm-3">'),
-				$inp_1 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control ' + type + 'picker"/>'),
-				$inp_2 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control ' + type + 'picker"/>'),
-				$controls = $('<div class="col-sm-2">'),
-				$remove_btn = $('<button type="button" class="btn btn-danger hidden" title="Remove interval" data-interval="remove" data-type="' + type + '"><i class="fa fa-minus-circle"></i></button>'),
-				$add_btn = $('<button type="button" class="btn btn-primary" title="Add interval" data-interval="add" data-type="' + type + '"><i class="fa fa-plus-circle"></i></button>');
-
-		$cont.append($wrapper)
-		$wrapper.append($label, $inp_cont_1, $inp_cont_2, $controls)
-		$inp_cont_1.append($inp_1)
-		$inp_cont_2.append($inp_2)
-		$controls.append($remove_btn, $add_btn)
-
-		$add_btn.data('type', type)
-
-		$inp_1.datetimepicker(o.datetimepickerOptions[type])
-		$inp_2.datetimepicker(o.datetimepickerOptions[type])
 
 
-		return $cont
-	}
+	o.$source_container.append(o.dom.$cont)
 
-	o.updateIntervalBtns = function($cont) {
-		var elementsCount = $cont.children().length;
 
-		$cont.children().each(function (i, el) {
-			var $el = $(el),
-					$addBtn = $el.find('button[data-interval=add]'),
-					$removeBtn = $el.find('button[data-interval=remove]');
+	o.addIntervalBlock = function () {
+		o.intervalContainersCount++;
 
-			if (i == 0 && elementsCount == 1) {
-				$addBtn.removeClass('hidden')
-				$removeBtn.addClass('hidden')
-			} else if (i == 0 && elementsCount > 1) {
-				$addBtn.addClass('hidden')
-				$removeBtn.addClass('hidden')
-			} else if (i > 0 && i == elementsCount - 1 && elementsCount < o.maxTimeIntervals) {
-				$addBtn.removeClass('hidden')
-				$removeBtn.removeClass('hidden')
-			} else if (i > 0 && i < elementsCount - 1 && elementsCount == o.maxTimeIntervals) {
-				$addBtn.addClass('hidden')
-				$removeBtn.removeClass('hidden')
-			} else if (i > 0 && i == elementsCount - 1) {
-				$addBtn.addClass('hidden')
-				$removeBtn.removeClass('hidden')
-			}
+		var dic = o.dom.intervalContainers,
+				container_id = 'cont_' + o.intervalContainersCount,
+				bd = dic[container_id] = {}; // block dom
+
+		bd.$wrapper = $('<div class="clearfix" data-container-id="' + container_id + '">')
+		bd.$label = $('<b class="col-sm-3">' + o.title + ' </b>')
+		bd.$inp_cont_1 = $('<div class="col-sm-3">')
+		bd.$inp_cont_2 = $('<div class="col-sm-3">')
+		bd.$inp_1 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control" placeholder="From"/>')
+		bd.$inp_2 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control" placeholder="To"/>')
+		bd.$controls = $('<div class="col-sm-2">')
+		bd.$remove_btn = $('<button type="button" class="btn btn-danger mr5" title="Remove interval" data-action="remove"><i class="fa fa-minus-circle"></i></button>')
+		bd.$add_btn = $('<button type="button" class="btn btn-primary" title="Add interval" data-action="add"><i class="fa fa-plus-circle"></i></button>');
+
+		bd.$wrapper.append((o.title) ? bd.$label : null, bd.$inp_cont_1, bd.$inp_cont_2, bd.$controls)
+		bd.$inp_cont_1.append(bd.$inp_1)
+		bd.$inp_cont_2.append(bd.$inp_2)
+		bd.$controls.append(bd.$remove_btn, bd.$add_btn)
+
+		bd.$inp_1.datetimepicker(o.datetimepickerOptions[o.type])
+		bd.$inp_2.datetimepicker(o.datetimepickerOptions[o.type])
+
+		if (o.intervalContainersCount > 1) {
+			bd.$wrapper.addClass('mt10')
+			bd.$label.empty()
+		}
+
+		bd.$inp_1.add(bd.$inp_2).on('dp.change', function(){
+			o.updateLimits()
+			o.updateIntervalBtns()
 		})
+
+		o.dom.$cont.append(bd.$wrapper)
+
+		o.updateIntervalBtns()
+
+	}
+	o.updateLimits = function () {
+		var prev_cont_id,
+				a_container_ids = [],
+				cont_nav = {},
+				counter = 0;
+
+		for (var cont_id in o.dom.intervalContainers) {
+			a_container_ids.push(cont_id)
+		}
+		for (var cont_id in o.dom.intervalContainers) {
+			if (!cont_nav[cont_id]) cont_nav[cont_id] = {}
+			cont_nav[cont_id].next = (a_container_ids[counter + 1])? a_container_ids[counter + 1] : null;
+			cont_nav[cont_id].prev = (a_container_ids[counter - 1]) ? a_container_ids[counter - 1] : null;
+
+			counter++
+		}
+
+
+		for (var cont_id in o.dom.intervalContainers) {
+			var contDom = o.dom.intervalContainers[cont_id],
+					prevContDom = o.dom.intervalContainers[cont_nav[cont_id].prev],
+					nextContDom = o.dom.intervalContainers[cont_nav[cont_id].next],
+					$inp_1 = contDom.$inp_1,
+					$inp_2 = contDom.$inp_2,
+					inp_1_val = $inp_1.val(),
+					inp_2_val = $inp_2.val();
+
+
+			if (!inp_1_val && prevContDom) {
+				$inp_1.data("DateTimePicker").date(moment(prevContDom.$inp_2.val(), 'HH:mm').add(1, 'hour').format('HH:mm'))
+			}
+
+
+			var inp_1_minDate = moment('00:00', 'HH:mm'),
+					inp_1_maxDate = false,
+					inp_2_minDate = false,
+					inp_2_maxDate = moment('23:59', 'HH:mm'),
+					next_inp1_val = (nextContDom) ? nextContDom.$inp_1.val() : null,
+					prev_inp2_val = (prevContDom) ? prevContDom.$inp_2.val() : null;
+
+			if (inp_2_val)
+				inp_1_maxDate = moment(inp_2_val, 'HH:mm');
+			if (inp_1_val)
+				inp_2_minDate = moment(inp_1_val, 'HH:mm');
+
+			if (!prevContDom && !nextContDom) {
+
+			} else if (!prevContDom && nextContDom) {
+
+				if (next_inp1_val) inp_2_maxDate = moment(next_inp1_val, 'HH:mm')
+
+			} else if (prevContDom && next_inp1_val) {
+
+				if (prev_inp2_val) inp_1_minDate = moment(prev_inp2_val, 'HH:mm')
+				if (next_inp1_val) inp_2_maxDate = moment(next_inp1_val, 'HH:mm')
+
+			} else if(prevContDom && !nextContDom) {
+
+				if (prev_inp2_val) inp_1_minDate = moment(prev_inp2_val, 'HH:mm')
+
+			}
+
+			$inp_1.data("DateTimePicker").minDate(inp_1_minDate)
+			$inp_1.data("DateTimePicker").maxDate(inp_1_maxDate)
+			$inp_2.data("DateTimePicker").minDate(inp_2_minDate)
+			$inp_2.data("DateTimePicker").maxDate(inp_2_maxDate)
+
+
+			if (!nextContDom && $inp_1.val() == $inp_2.val()) {
+				$inp_2.val('')
+			}
+		}
+
+	}
+	o.updateIntervalBtns = function() {
+
+		var elementsCount = o.dom.$cont.children().length;
+
+		o.dom.$cont.children().each(function (i, wrapper) {
+			var $wrapper = $(wrapper),
+					container_id = $wrapper.data('container-id'),
+					contDom = o.dom.intervalContainers[container_id],
+					$addBtn = contDom.$add_btn,
+					$removeBtn = contDom.$remove_btn;
+
+			if (contDom.$inp_1.val() && contDom.$inp_2.val()) {
+				if (i == 0 && elementsCount == 1) {
+					$addBtn.removeClass('hidden')
+					$removeBtn.addClass('hidden')
+				} else if (i == 0 && elementsCount > 1) {
+					$addBtn.addClass('hidden')
+					$removeBtn.addClass('hidden')
+				} else if (i > 0 && i == elementsCount - 1 && elementsCount < o.maxTimeIntervals) {
+					$addBtn.removeClass('hidden')
+					$removeBtn.removeClass('hidden')
+				} else if (i > 0 && i < elementsCount - 1 && elementsCount == o.maxTimeIntervals) {
+					$addBtn.addClass('hidden')
+					$removeBtn.removeClass('hidden')
+				} else if (i > 0 && i == elementsCount - 1) {
+					$addBtn.addClass('hidden')
+					$removeBtn.removeClass('hidden')
+				}
+			} else {
+				$addBtn.addClass('hidden')
+				$removeBtn.addClass('hidden')
+				if (i > 0) {
+					$removeBtn.removeClass('hidden')
+				}
+			}
+
+			if (contDom.$inp_2.val() == '23:59') {
+				$addBtn.addClass('hidden')
+			}
+
+		})
+		o.updateLimits()
 	}
 	o.addRemoveTimeInterval = function (e) {
 
 		var $btn = $(this),
-				intervalType = $btn.data('type'),
-				$cont = $btn.parents('div[data-' + intervalType + '-container]'),
-				$contParent = $cont.parent(),
-				elementsCount = $cont.siblings().length;
+				$wrapper = $btn.parents('[data-container-id]'),
+				container_id = $wrapper.data('container-id'),
+				contDom = o.dom.intervalContainers[container_id];
 
-		if ($btn.data('interval') == 'add') {
-
-			if (elementsCount + 2 > o.maxTimeIntervals) return
-
-			var $newIntervalCont = $cont.clone();
-
-			$newIntervalCont.addClass('mt10')
-			$newIntervalCont.find('b').text('')
-			$newIntervalCont.find('.datetimepicker').datetimepicker(o.datetimepickerOptions[intervalType]);
-
-			$cont.after($newIntervalCont)
+		if ($btn.data('action') == 'add') {
+			o.addIntervalBlock()
 		} else {
-			$cont.remove()
+			$wrapper.remove()
+			delete o.dom.intervalContainers[container_id]
 		}
-		o.updateIntervalBtns($contParent)
+		o.updateIntervalBtns()
 	}
-	o.init()
 
-	return o;
+	o.addIntervalBlock()
+	o.dom.$cont.on('click', 'button[data-action]', o.addRemoveTimeInterval)
+
+	return o.$source_container
+
+	//return o;
 }
 
-$(function(){
-	dateTimeIntervalsBuilder = new DateTimeIntervalsBuilder()
-})
