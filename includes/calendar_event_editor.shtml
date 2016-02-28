@@ -3,14 +3,26 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h3 class="modal-title">Event</h3>
+				<h3 class="modal-title">New event</h3>
 			</div>
-			<div class="modal-body" style="height: 400px">
+			<div class="modal-body">
 				<form action="#">
-					<div class="row">
+					<div class="row mb30">
+						<div class="col-md-12">
+							<label for="add_event_name">Event name</label>
+							<input type="text" name="name" class="form-control" id="add_event_name">
+						</div>
+					</div>
+					<div class="row mb30">
+						<label class="col-md-3" for="add_event_status">Status</label>
 						<div class="col-md-6">
-							<div class="form-group">
-								<label for="add_event_form_region">Regions</label>
+							<input type="checkbox" name="status" checked data-width="100px" data-toggle="toggle" data-on="Opened" data-off="Closed" id="add_event_status">
+						</div>
+					</div>
+					<div class="row mb30">
+						<div class="form-group">
+							<label class="col-md-3" for="add_event_form_region">Regions</label>
+							<div class="col-md-6">
 								<select id="add_event_form_region" class="w100 select2 form-control" multiple="multiple" name="region" placeholder="Select affected regions">
 									<option value="37">Aargau</option>
 									<option value="30">Appenzell Innerrhoden</option>
@@ -40,9 +52,11 @@
 								</select>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="add_event_form_companies">Companies</label>
+					</div>
+					<div class="row mb30">
+						<div class="form-group">
+							<label class="col-md-3" for="add_event_form_companies">Companies</label>
+							<div class="col-md-6">
 								<select id="add_event_form_companies" class="select2 form-control" multiple="multiple" name="companies" placeholder="Select affected companies">
 									<option value="company_id_1">My company</option>
 									<option value="company_id_2">My Super Store</option>
@@ -50,6 +64,14 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-12" id="add_event_date_interval"></div>
+					</div>
+					<div class="row">
+						<div class="col-md-12" id="add_event_time_intervals"></div>
+					</div>
+
+
 				</form>
 			</div>
 			<div class="modal-footer">

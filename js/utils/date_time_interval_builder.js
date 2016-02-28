@@ -25,10 +25,23 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 				down: "fa fa-arrow-down"
 			}
 		},
-		day: {}
+		date: {
+			format: 'YYYY.MM.DD'
+		}
 	}
 
-
+	o.inputConfig = {
+		time: {
+			momentFormat: o.datetimepickerOptions.time.format,
+			minLimit: '00:00',
+			maxLimit: '23:59'
+		},
+		date: {
+			momentFormat: o.datetimepickerOptions.date.format,
+			minLimit: false,
+			maxLimit: false
+		}
+	}
 
 	o.$source_container.append(o.dom.$cont)
 
@@ -38,15 +51,18 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 
 		var dic = o.dom.intervalContainers,
 				container_id = 'cont_' + o.intervalContainersCount,
-				bd = dic[container_id] = {}; // block dom
+				bd = dic[container_id] = {}, // block dom
+				containers_class = 'col-sm-3';
+
+
 
 		bd.$wrapper = $('<div class="clearfix" data-container-id="' + container_id + '">')
-		bd.$label = $('<b class="col-sm-3">' + o.title + ' </b>')
-		bd.$inp_cont_1 = $('<div class="col-sm-3">')
-		bd.$inp_cont_2 = $('<div class="col-sm-3">')
+		bd.$label = $('<label class="' + containers_class + '">' + o.title + ' </label>')
+		bd.$inp_cont_1 = $('<div class="' + containers_class + '">')
+		bd.$inp_cont_2 = $('<div class="' + containers_class + '">')
 		bd.$inp_1 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control" placeholder="From"/>')
 		bd.$inp_2 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control" placeholder="To"/>')
-		bd.$controls = $('<div class="col-sm-2">')
+		bd.$controls = $('<div class="' + containers_class + '">')
 		bd.$remove_btn = $('<button type="button" class="btn btn-danger mr5" title="Remove interval" data-action="remove"><i class="fa fa-minus-circle"></i></button>')
 		bd.$add_btn = $('<button type="button" class="btn btn-primary" title="Add interval" data-action="add"><i class="fa fa-plus-circle"></i></button>');
 
@@ -98,49 +114,51 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 					$inp_1 = contDom.$inp_1,
 					$inp_2 = contDom.$inp_2,
 					inp_1_val = $inp_1.val(),
-					inp_2_val = $inp_2.val();
+					inp_2_val = $inp_2.val(),
+					o_ic = o.inputConfig[o.type];
 
 
 			if (!inp_1_val && prevContDom) {
-				$inp_1.data("DateTimePicker").date(moment(prevContDom.$inp_2.val(), 'HH:mm').add(1, 'hour').format('HH:mm'))
+				if (o.type == 'time') {
+					var prev_inp2_hours = moment(prevContDom.$inp_2.val(), o_ic.momentFormat).get('hours');
+					if (prev_inp2_hours < 23) $inp_1.data("DateTimePicker").date(moment(prevContDom.$inp_2.val(), o_ic.momentFormat).add(1, 'hour').format(o_ic.momentFormat))
+				} else {
+					var prev_inp2_day = moment(prevContDom.$inp_2.val(), o_ic.momentFormat).get('day');
+					if (prev_inp2_day < 30) $inp_1.data("DateTimePicker").date(moment(prevContDom.$inp_2.val(), o_ic.momentFormat).add(1, 'day').format(o_ic.momentFormat))
+				}
+
 			}
 
-
-			var inp_1_minDate = moment('00:00', 'HH:mm'),
+			dbg(o.type, o_ic.minLimit, o_ic.maxLimit)
+			var inp_1_minDate = (o_ic.minLimit) ? moment(o_ic.minLimit, o_ic.momentFormat) : false,
 					inp_1_maxDate = false,
 					inp_2_minDate = false,
-					inp_2_maxDate = moment('23:59', 'HH:mm'),
+					inp_2_maxDate = (o_ic.maxLimit) ? moment(o_ic.maxLimit, o_ic.momentFormat) : false,
+
 					next_inp1_val = (nextContDom) ? nextContDom.$inp_1.val() : null,
 					prev_inp2_val = (prevContDom) ? prevContDom.$inp_2.val() : null;
+			//end of var
 
 			if (inp_2_val)
-				inp_1_maxDate = moment(inp_2_val, 'HH:mm');
+				inp_1_maxDate = moment(inp_2_val, o_ic.momentFormat);
+
 			if (inp_1_val)
-				inp_2_minDate = moment(inp_1_val, 'HH:mm');
+				inp_2_minDate = moment(inp_1_val, o_ic.momentFormat);
 
 			if (!prevContDom && !nextContDom) {
-
 			} else if (!prevContDom && nextContDom) {
-
-				if (next_inp1_val) inp_2_maxDate = moment(next_inp1_val, 'HH:mm')
-
+				if (next_inp1_val) inp_2_maxDate = moment(next_inp1_val, o_ic.momentFormat)
 			} else if (prevContDom && next_inp1_val) {
-
-				if (prev_inp2_val) inp_1_minDate = moment(prev_inp2_val, 'HH:mm')
-				if (next_inp1_val) inp_2_maxDate = moment(next_inp1_val, 'HH:mm')
-
-			} else if(prevContDom && !nextContDom) {
-
-				if (prev_inp2_val) inp_1_minDate = moment(prev_inp2_val, 'HH:mm')
-
+				if (prev_inp2_val) inp_1_minDate = moment(prev_inp2_val, o_ic.momentFormat)
+				if (next_inp1_val) inp_2_maxDate = moment(next_inp1_val, o_ic.momentFormat)
+			} else if (prevContDom && !nextContDom) {
+				if (prev_inp2_val) inp_1_minDate = moment(prev_inp2_val, o_ic.momentFormat)
 			}
 
 			$inp_1.data("DateTimePicker").minDate(inp_1_minDate)
 			$inp_1.data("DateTimePicker").maxDate(inp_1_maxDate)
 			$inp_2.data("DateTimePicker").minDate(inp_2_minDate)
 			$inp_2.data("DateTimePicker").maxDate(inp_2_maxDate)
-
-
 			if (!nextContDom && $inp_1.val() == $inp_2.val()) {
 				$inp_2.val('')
 			}
@@ -185,6 +203,10 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 
 			if (contDom.$inp_2.val() == '23:59') {
 				$addBtn.addClass('hidden')
+			}
+			if (o.maxTimeIntervals == 1) {
+				$addBtn.addClass('hidden')
+				$removeBtn.addClass('hidden')
 			}
 
 		})

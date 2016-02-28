@@ -1,8 +1,32 @@
 $(function () {
 	var openEventEditor  = function () {
 		$('#calendar-events-modal').modal('show')
+
 		return false
 	}
+
+	var prepareEventEditor = function(){
+		$('#add_event_date_interval').dateTimeIntervalsBuilder({
+			name: 'date',
+			type: 'date',
+			title: 'Date interval',
+			maxTimeIntervals: 1
+		})
+		$('#add_event_time_intervals').dateTimeIntervalsBuilder({
+			name: 'time_intervals',
+			type: 'time',
+			title: 'Time intervals',
+			maxTimeIntervals: 3
+		})
+
+		$('#add_event_status').on('change', function(e){
+			var val = $(this).prop('checked');
+
+			$('#add_event_time_intervals').slideToggle(val)
+		})
+	}
+
+
 
 	var calendar = $('#calendar').fullCalendar({
 		firstDay:1,
@@ -89,6 +113,9 @@ $(function () {
 
 	$('#calendar .fc-button').removeClass('fc-button fc-state-default fc-corner-left fc-corner-right').addClass('btn btn-primary')
 	$('#calendar .fc-addEvent-button').addClass('btn-lg')
+
+	prepareEventEditor()
+
 
 })
 
