@@ -1,12 +1,6 @@
 $(function () {
-	var openEventEditor  = function () {
-		$('#calendar-events-modal').modal('show')
-
-		return false
-	}
-
-	var prepareEventEditor = function(){
-		$('#add_event_date_interval').dateTimeIntervalsBuilder({
+	var prepareEventEditor = function () {
+		$('#add_event_date_intervals').dateTimeIntervalsBuilder({
 			name: 'date',
 			type: 'date',
 			title: 'Date interval',
@@ -19,13 +13,47 @@ $(function () {
 			maxTimeIntervals: 3
 		})
 
-		$('#add_event_status').on('change', function(e){
-			var val = $(this).prop('checked');
+		$('#add_event_status').on('change', function (e) {
+			var val = $(this).prop('checked'),
+					$time_int_cont = $('#add_event_time_intervals');
 
-			$('#add_event_time_intervals').slideToggle(val)
+			if (val) $time_int_cont.slideDown()
+			else $time_int_cont.slideUp()
 		})
+		$('#add_event_status').change()
+
+		$('#add_event_save_btn').click(saveEvent)
+	}
+	var openEventEditor  = function (start, end) {
+		$('#calendar-events-modal').modal('show')
+
+		if (start && end) {
+			$('#add_event_date_intervals').dateTimeIntervalsBuilder({start: start, end: end})
+		}
+
+		var timeIntervalsInstance = $('#add_event_date_intervals').dateTimeIntervalsBuilder('instance')
+		timeIntervalsInstance.reset()
+
+		return false
 	}
 
+
+
+	var saveEvent = function(){
+		var eventName = $('#add_event_name').val() || 'Some event',
+				statusName = ($('#add_event_status').prop('checked'))? 'Open' : 'Closed',
+				dateIntervalsInstance = $('#add_event_date_intervals').dateTimeIntervalsBuilder('instance'),
+				dateIntervalsValues = dateIntervalsInstance.getValues();
+
+		var eventData = {
+			title: eventName + ' (' + statusName + ')',
+			start: dateIntervalsValues[0][0],
+			end: moment(dateIntervalsValues[0][1], 'YYYY-MM-DD').subtract(5,'hours').format()
+		};
+		dbg(eventData)
+		$('#calendar').fullCalendar('renderEvent', eventData, true)
+		//$('#calendar').fullCalendar('unselect')
+	}
 
 
 	var calendar = $('#calendar').fullCalendar({
@@ -49,8 +77,8 @@ $(function () {
 		},
 		selectable: true,
 		selectHelper: true,
-		selectOverlap: false,
-		slotEventOverlap:false,
+		//selectOverlap: false,
+		//slotEventOverlap:true,
 
 		views: {
 			agenda: {
@@ -59,21 +87,30 @@ $(function () {
 			}
 		},
 		select: function (start, end) {
-			var title = prompt('Event Title:');
-			var eventData;
-			if (title) {
-				eventData = {
-					title: title,
-					start: start,
-					end: end
-				};
-				$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-			}
-			$('#calendar').fullCalendar('unselect');
+
+			dbg('select')
+			openEventEditor(start, end)
+			//var title = prompt('Event Title:');
+			//var eventData;
+			//if (title) {
+			//	eventData = {
+			//		title: title,
+			//		start: start,
+			//		end: end
+			//	};
+			//	$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+			//}
+			//$('#calendar').fullCalendar('unselect');
 		},
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events
 		events: [
+			{
+				title: "Some event (Closed)",
+				start: moment().day(-10).hours(8).minutes(0).format(),
+				end: moment().day(-8).hours(9).minutes(0).format()
+
+			},
 			{
 				title: 'Closed - Super holidays',
 				start: moment().day(+6).hours(8).minutes(0).format(), //'2016-02-01' '2016-02-09T16:00:00'

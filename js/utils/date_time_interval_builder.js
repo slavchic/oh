@@ -4,16 +4,23 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 
 	o.$source_container = this;
 
-	o.name = options.name;
-	o.type = options.type;
-	o.title = options.title;
-	o.maxTimeIntervals = (options.maxTimeIntervals) ? options.maxTimeIntervals : 3;
+	var instance = o.$source_container.data('builder_instance');
 
-	o.intervalContainersCount = 0;
+	if (instance) {
+		o = o.$source_container.data('builder_instance')
+		return o.applyNewOptions(options)
+	} else {
+		o.$source_container.data('builder_instance', o);
 
-	o.dom = {
-		intervalContainers:{},
-		$cont: $('<div class="row mb30">')
+		o.name = options.name;
+		o.type = options.type;
+		o.title = options.title;
+		o.maxTimeIntervals = (options.maxTimeIntervals) ? options.maxTimeIntervals : 3;
+		o.intervalContainersCount = 0;
+		o.dom = {
+			intervalContainers: {},
+			$cont: $('<div class="row mb30">')
+		}
 	}
 
 	o.datetimepickerOptions =  {
@@ -26,7 +33,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 			}
 		},
 		date: {
-			format: 'YYYY.MM.DD'
+			format: 'YYYY-MM-DD'
 		}
 	}
 
@@ -45,6 +52,43 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 
 	o.$source_container.append(o.dom.$cont)
 
+	o.reset = function() {
+		o.dom.$cont.empty()
+
+		o.intervalContainersCount = 0
+		o.dom.intervalContainers = {}
+
+		o.addIntervalBlock()
+	}
+
+	o.applyNewOptions =  function(options){
+		if (options) {
+			if (options.start && options.end) {
+				var a_container_ids = []
+
+				o.reset()
+
+				setTimeout(function(){ // micro timeout to rebuild dom
+					for (var cont_id in o.dom.intervalContainers) {
+						a_container_ids.push(cont_id)
+					}
+
+					var firstCont = o.dom.intervalContainers[a_container_ids[0]],
+							$inp_1 = firstCont.$inp_1,
+							$inp_2 = firstCont.$inp_2;
+
+					$inp_1.val(options.start.format(o.inputConfig[o.type].momentFormat))
+					$inp_2.val(options.end.format(o.inputConfig[o.type].momentFormat))
+
+				},10)
+
+			}
+			if (options == 'instance') return o;
+			if (options == 'getValues') return o.getValues()
+		}
+		return o.$source_container
+
+	}
 
 	o.addIntervalBlock = function () {
 		o.intervalContainersCount++;
@@ -53,8 +97,6 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 				container_id = 'cont_' + o.intervalContainersCount,
 				bd = dic[container_id] = {}, // block dom
 				containers_class = 'col-sm-3';
-
-
 
 		bd.$wrapper = $('<div class="clearfix" data-container-id="' + container_id + '">')
 		bd.$label = $('<label class="' + containers_class + '">' + o.title + ' </label>')
@@ -90,8 +132,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 
 	}
 	o.updateLimits = function () {
-		var prev_cont_id,
-				a_container_ids = [],
+		var a_container_ids = [],
 				cont_nav = {},
 				counter = 0;
 
@@ -129,15 +170,18 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 
 			}
 
-			dbg(o.type, o_ic.minLimit, o_ic.maxLimit)
+			//dbg(o.type, o_ic.minLimit, o_ic.maxLimit)
 			var inp_1_minDate = (o_ic.minLimit) ? moment(o_ic.minLimit, o_ic.momentFormat) : false,
 					inp_1_maxDate = false,
 					inp_2_minDate = false,
 					inp_2_maxDate = (o_ic.maxLimit) ? moment(o_ic.maxLimit, o_ic.momentFormat) : false,
 
-					next_inp1_val = (nextContDom) ? nextContDom.$inp_1.val() : null,
-					prev_inp2_val = (prevContDom) ? prevContDom.$inp_2.val() : null;
+					next_inp1_val = (nextContDom) ? nextContDom.$inp_1.val() : '',
+					prev_inp2_val = (prevContDom) ? prevContDom.$inp_2.val() : '';
 			//end of var
+
+
+
 
 			if (inp_2_val)
 				inp_1_maxDate = moment(inp_2_val, o_ic.momentFormat);
@@ -146,6 +190,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 				inp_2_minDate = moment(inp_1_val, o_ic.momentFormat);
 
 			if (!prevContDom && !nextContDom) {
+
 			} else if (!prevContDom && nextContDom) {
 				if (next_inp1_val) inp_2_maxDate = moment(next_inp1_val, o_ic.momentFormat)
 			} else if (prevContDom && next_inp1_val) {
@@ -155,18 +200,21 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 				if (prev_inp2_val) inp_1_minDate = moment(prev_inp2_val, o_ic.momentFormat)
 			}
 
-			$inp_1.data("DateTimePicker").minDate(inp_1_minDate)
-			$inp_1.data("DateTimePicker").maxDate(inp_1_maxDate)
-			$inp_2.data("DateTimePicker").minDate(inp_2_minDate)
-			$inp_2.data("DateTimePicker").maxDate(inp_2_maxDate)
+			o.applyInpMinMaxDate($inp_1, inp_1_minDate, inp_1_maxDate)
+			o.applyInpMinMaxDate($inp_2, inp_2_minDate, inp_2_maxDate)
+
 			if (!nextContDom && $inp_1.val() == $inp_2.val()) {
 				$inp_2.val('')
 			}
 		}
 
 	}
+	o.applyInpMinMaxDate = function($inp, minDate, maxDate){ // minDate, maxDate - moment value
+		//dbg($inp)
+		if (minDate) $inp.data("DateTimePicker").minDate(minDate)
+		if (maxDate) $inp.data("DateTimePicker").maxDate(maxDate)
+	}
 	o.updateIntervalBtns = function() {
-
 		var elementsCount = o.dom.$cont.children().length;
 
 		o.dom.$cont.children().each(function (i, wrapper) {
@@ -194,7 +242,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 					$removeBtn.removeClass('hidden')
 				}
 			} else {
-				$addBtn.addClass('hidden')
+				///$addBtn.addClass('hidden')
 				$removeBtn.addClass('hidden')
 				if (i > 0) {
 					$removeBtn.removeClass('hidden')
@@ -212,6 +260,16 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		})
 		o.updateLimits()
 	}
+	o.getValues = function(){
+		var result = []
+		for (var cont_id in o.dom.intervalContainers) {
+			var contDom = o.dom.intervalContainers[cont_id],
+					rowResult = [contDom.$inp_1.val(), contDom.$inp_2.val()];
+
+			result.push(rowResult)
+		}
+		return result
+	}
 	o.addRemoveTimeInterval = function (e) {
 
 		var $btn = $(this),
@@ -223,6 +281,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 			o.addIntervalBlock()
 		} else {
 			$wrapper.remove()
+			o.intervalContainersCount--
 			delete o.dom.intervalContainers[container_id]
 		}
 		o.updateIntervalBtns()

@@ -65,7 +65,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12" id="add_event_date_interval"></div>
+						<div class="col-md-12" id="add_event_date_intervals"></div>
 					</div>
 					<div class="row">
 						<div class="col-md-12" id="add_event_time_intervals"></div>
@@ -75,7 +75,7 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary mr5" data-dismiss="modal" id="add_event_save_btn">Save</button> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
