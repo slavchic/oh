@@ -23,9 +23,6 @@
 						<div class="addthis_sharing_toolbox social"></div>
 					</div>
 				</div>
-				<div class="text-center mt15 mb15 visible-xs">
-					<a href="#" class="text-link-lg report_btn">Wrong openinghours?</a>
-				</div>
 				<div class="schedule">
 					<nav class="nav">
 						<a id="prev-week" href="#" class="left"><i class="fa fa-chevron-circle-left"></i></a>
@@ -79,6 +76,9 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="text-center mt15 visible-xs">
+						<a href="#" class="text-link-lg report_btn">Wrong openinghours?</a>
+					</div>
 					<div class="about">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nihil possimus quis tempore totam voluptates voluptatibus. Assumenda doloremque eos fugiat officia soluta? Expedita ipsam minima nesciunt sapiente soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, cumque nemo rem repellendus soluta vel!
 					</div>
