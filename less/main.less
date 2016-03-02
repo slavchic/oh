@@ -113,6 +113,7 @@ a {
       margin-top: 0;
     }
     &.title {
+      margin-top: 0;
       padding-bottom: 20px;
       .divider_b;
     }
@@ -517,7 +518,7 @@ article {
       }
     }
     a {
-      color: darken(@link_color, 10%);
+     // color: darken(@link_color, 10%);
     }
     .logo {
       .pr;
@@ -1149,7 +1150,9 @@ article {
     }
   }
 }
-
+.text-link-lg {
+  font-size: @font-size-large - 2;
+}
 .nav-tabs.nav-tabs-lg {
   margin-bottom: @grid-gutter-width;
   > li > a {

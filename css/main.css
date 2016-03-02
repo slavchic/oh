@@ -7710,6 +7710,7 @@ a:hover {
 #main h1.title,
 #main h2.title,
 #main h3.title {
+  margin-top: 0;
   padding-bottom: 20px;
   border-bottom: 4px solid rgba(0, 0, 0, 0.1);
 }
@@ -8162,9 +8163,6 @@ section .article_list {
     width: auto;
     padding-top: 0;
   }
-}
-.company_details .infocard a {
-  color: #409bbf;
 }
 .company_details .infocard .logo {
   position: relative;
@@ -8789,6 +8787,9 @@ section .article_list {
 }
 .administration .activity > div > label {
   margin-left: 30px;
+}
+.text-link-lg {
+  font-size: 17px;
 }
 .nav-tabs.nav-tabs-lg {
   margin-bottom: 30px;

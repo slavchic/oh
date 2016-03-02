@@ -69,7 +69,8 @@ $(function () {
 	})
 
 	$(".select2").select2({
-		width:'100%'
+		width:'100%',
+		minimumResultsForSearch: 5
 	})
 
 	$('select.select2').on('change', function () {
