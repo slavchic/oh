@@ -53,6 +53,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 	o.$source_container.append(o.dom.$cont)
 
 	o.reset = function() {
+		dbg('reset')
 		o.dom.$cont.empty()
 
 		o.intervalContainersCount = 0
@@ -216,6 +217,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		if (maxDate) $inp.data("DateTimePicker").maxDate(maxDate)
 	}
 	o.updateIntervalBtns = function() {
+		dbg(o.maxTimeIntervals)
 		var elementsCount = o.dom.$cont.children().length;
 
 		o.dom.$cont.children().each(function (i, wrapper) {
@@ -226,6 +228,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 					$removeBtn = contDom.$remove_btn;
 
 			if (contDom.$inp_1.val() && contDom.$inp_2.val()) {
+				$addBtn.prop('disabled', false)
 				if (i == 0 && elementsCount == 1) {
 					$addBtn.removeClass('hidden')
 					$removeBtn.addClass('hidden')
@@ -243,7 +246,10 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 					$removeBtn.removeClass('hidden')
 				}
 			} else {
-				///$addBtn.addClass('hidden')
+				$addBtn.prop('disabled', true)
+				if (elementsCount == o.maxTimeIntervals) {
+					$addBtn.addClass('hidden')
+				}
 				$removeBtn.addClass('hidden')
 				if (i > 0) {
 					$removeBtn.removeClass('hidden')
