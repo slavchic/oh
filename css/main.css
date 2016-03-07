@@ -7697,7 +7697,6 @@ a:hover {
 #main h2,
 #main h3 {
   margin-bottom: 30px;
-  padding: 0 15px;
   color: #777d80;
   font-weight: 600;
   text-transform: uppercase;
@@ -7863,7 +7862,7 @@ a:hover {
     border-top: 4px solid rgba(0, 0, 0, 0.05);
   }
 }
-.listing .item:nth-child(2n) {
+.listing .item:nth-child(2n-1) {
   background-color: rgba(119, 125, 128, 0.05);
 }
 .listing .item:hover {
@@ -8734,6 +8733,24 @@ section .article_list {
     background-color: #66afcc;
   }
 }
+@media (max-width: 480px) {
+  .administration .nav.nav-tabs {
+    border: 1px solid #dadada;
+  }
+  .administration .nav.nav-tabs > li {
+    display: block;
+    float: none;
+  }
+  .administration .nav.nav-tabs > li.active a {
+    background-color: #dadada;
+  }
+  .administration .nav.nav-tabs > li > a {
+    margin: 0;
+    padding: 10px 15px;
+    border: 0;
+    font-size: 15px;
+  }
+}
 .administration.calendar #calendar-title {
   margin-top: 0;
   margin-bottom: 15px;
@@ -8762,12 +8779,70 @@ section .article_list {
 .administration.calendar .glyphicon.glyphicon-chevron-down:before {
   content: '';
 }
+@media (max-width: 480px) {
+  .administration.calendar .fc-toolbar {
+    text-align: left;
+  }
+}
+@media (max-width: 480px) {
+  .administration.calendar .fc-toolbar .fc-button-group {
+    float: none;
+  }
+}
+@media (max-width: 480px) {
+  .administration.calendar .fc-toolbar .fc-today-button {
+    float: right;
+  }
+}
+@media (max-width: 480px) {
+  .administration.calendar .fc-toolbar .fc-left {
+    float: none;
+    margin: 0 0 10px;
+  }
+}
+@media (max-width: 768px) {
+  .administration.calendar .fc-toolbar .fc-center h2 {
+    padding: 0 0 0 0 !important;
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .administration.calendar .fc-toolbar .fc-center {
+    float: left;
+    margin: 0 0 10px;
+  }
+  .administration.calendar .fc-toolbar .fc-center h2 {
+    padding: 0 0 0 0 !important;
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .administration.calendar .fc-toolbar .fc-right {
+    float: right;
+  }
+}
+@media (max-width: 480px) {
+  .administration .listing .item {
+    padding-bottom: 70px;
+  }
+}
 .administration .listing .item .details {
   width: 130px;
 }
+@media (max-width: 480px) {
+  .administration .listing .item .details {
+    width: auto;
+    padding: 0 15px;
+    text-align: left;
+  }
+}
 .administration .listing .item .button {
   text-align: center;
-  min-width: 100px;
+}
+@media (min-width: 480px) {
+  .administration .listing .item .button {
+    min-width: 100%;
+  }
 }
 .administration .listing .item .button.more {
   visibility: hidden;
@@ -8900,39 +8975,73 @@ section .article_list {
 .status_icons .fa.fa-check {
   color: #57c05c;
 }
-.button {
+.button,
+.fc button.button {
   display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
   color: #fff;
   background: #66afcc;
+  border: 0;
+  outline: 0;
+  height: auto;
 }
-.button:hover {
+.button:hover,
+.fc button.button:hover {
   text-decoration: none;
   color: #fff;
   background: #409bbf;
 }
-.button.sm {
+.button.sm,
+.fc button.button.sm {
   font-size: 13px;
   padding: 3px 10px;
 }
-.button.default {
+.button.md,
+.fc button.button.md {
+  font-size: 15px;
+  padding: 5px 15px;
+}
+.button.lg,
+.fc button.button.lg {
+  padding: 10px 20px;
+  font-size: 19px;
+}
+@media (max-width: 480px) {
+  .button.sm-xs,
+  .fc button.button.sm-xs {
+    font-size: 13px;
+    padding: 3px 10px;
+  }
+}
+@media (max-width: 480px) {
+  .button.md-xs,
+  .fc button.button.md-xs {
+    font-size: 15px;
+    padding: 5px 15px;
+  }
+}
+.button.default,
+.fc button.button.default {
   text-decoration: none;
   color: #333333;
   background: #fff;
   border: 1px solid #dadada;
 }
-.button.default:hover {
+.button.default:hover,
+.fc button.button.default:hover {
   text-decoration: none;
   color: #333333;
   background: #e6e6e6;
 }
-.button.danger {
+.button.danger,
+.fc button.button.danger {
   text-decoration: none;
   color: #fff;
   background: #fc5048;
 }
-.button.danger:hover {
+.button.danger:hover,
+.fc button.button.danger:hover {
   text-decoration: none;
   color: #fff;
   background: #fb2016;
@@ -8954,6 +9063,17 @@ form .hint {
   margin-top: 5px;
   font-size: 13px;
   color: #c1c1c1;
+}
+form .form-toggle-group {
+  display: table;
+  width: 100%;
+}
+form .form-toggle-group > div {
+  vertical-align: middle;
+  display: table-cell;
+}
+form .form-toggle-group > div:first-child {
+  width: 1%;
 }
 .bn {
   position: relative;
@@ -8984,6 +9104,9 @@ form .hint {
 }
 .divider_b {
   border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+}
+.w1 {
+  width: 1%;
 }
 .w100 {
   width: 100%;

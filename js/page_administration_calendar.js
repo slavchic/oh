@@ -148,8 +148,8 @@ $(function () {
 		// put your options and callbacks here
 	});
 
-	$('#calendar .fc-button').removeClass('fc-button fc-state-default fc-corner-left fc-corner-right').addClass('btn btn-primary')
-	$('#calendar .fc-addEvent-button').addClass('btn-lg')
+	$('#calendar .fc-button').removeClass('fc-button fc-state-default fc-corner-left fc-corner-right').addClass('button md md-xs')
+	$('#calendar .fc-addEvent-button').addClass('lg')
 
 	prepareEventEditor()
 

@@ -96,7 +96,8 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		var dic = o.dom.intervalContainers,
 				container_id = 'cont_' + o.intervalContainersCount,
 				bd = dic[container_id] = {}, // block dom
-				containers_class = 'col-sm-3';
+				containers_class = 'col-sm-3 col-xs-7',
+				controls_containers_class = 'col-sm-3 col-xs-5'
 
 		bd.$wrapper = $('<div class="clearfix" data-container-id="' + container_id + '">')
 		bd.$label = $('<label class="' + containers_class + '">' + o.title + ' </label>')
@@ -104,7 +105,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		bd.$inp_cont_2 = $('<div class="' + containers_class + '">')
 		bd.$inp_1 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control" placeholder="From"/>')
 		bd.$inp_2 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control" placeholder="To"/>')
-		bd.$controls = $('<div class="' + containers_class + '">')
+		bd.$controls = $('<div class="' + controls_containers_class + '">')
 		bd.$remove_btn = $('<button type="button" class="btn btn-danger mr5" title="Remove interval" data-action="remove"><i class="fa fa-minus-circle"></i></button>')
 		bd.$add_btn = $('<button type="button" class="btn btn-primary" title="Add interval" data-action="add"><i class="fa fa-plus-circle"></i></button>');
 

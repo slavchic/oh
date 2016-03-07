@@ -1,14 +1,15 @@
 <!--#set var="active_class" value=" class=\"active\"" -->
 
-
-<ul class="nav nav-tabs nav-tabs-lg" role="tablist">
-	<li
-	<!--#if expr="$DOCUMENT_URI=/administration_dashboard|administration_add_company/" --><!--#echo encoding="none" var="active_class" --><!--#endif-->
-	><a href="administration_dashboard.shtml" role="tab"><b>Dashboard</b></a></li>
-	<li
-	<!--#if expr="$DOCUMENT_URI=/administration_calendar/" --><!--#echo encoding="none" var="active_class" --><!--#endif-->
-			><a href="administration_calendar.shtml" role="tab"><b>Calendar</b></a></li>
-	<li
-	<!--#if expr="$DOCUMENT_URI=/administration_account/" --><!--#echo encoding="none" var="active_class" --><!--#endif-->
-			><a href="administration_account.shtml" role="tab"><b>Account</b></a></li>
-</ul>
+<div class="row">
+	<ul class="nav nav-tabs nav-tabs-lg" role="tablist">
+		<li
+		<!--#if expr="$DOCUMENT_URI=/administration_dashboard|administration_add_company/" --><!--#echo encoding="none" var="active_class" --><!--#endif-->
+		><a href="administration_dashboard.shtml" role="tab"><b>Dashboard</b></a></li>
+		<li
+		<!--#if expr="$DOCUMENT_URI=/administration_calendar/" --><!--#echo encoding="none" var="active_class" --><!--#endif-->
+		><a href="administration_calendar.shtml" role="tab"><b>Calendar</b></a></li>
+		<li
+		<!--#if expr="$DOCUMENT_URI=/administration_account/" --><!--#echo encoding="none" var="active_class" --><!--#endif-->
+		><a href="administration_account.shtml" role="tab"><b>Account</b></a></li>
+	</ul>
+</div>

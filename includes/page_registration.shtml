@@ -8,9 +8,15 @@
 					<!-- input field for spam bots (must be empty on submit)-->
 					<input type="text" class="dn" name="nameb"/>
 					<!---->
-					<div class="col-sm-12 validation">
-						<input type="checkbox" name="iscompany" checked data-toggle="toggle" data-on="Yes" data-off="No" id="register_as_company_inp">
-						<label for="register_as_company_inp" class="ml15 text-info bootstrap-toggle">Do you want to register a company?</label>
+					<div class="col-sm-12 validation form-toggle-group">
+						<div>
+							<input type="checkbox" name="iscompany" checked data-toggle="toggle" data-on="Yes" data-off="No" id="register_as_company_inp">
+						</div>
+						<div>
+							<label for="register_as_company_inp" class="ml15 text-info bootstrap-toggle">Do you want to register a company?</label>
+						</div>
+
+
 					</div>
 
 					<div class="col-sm-4">

@@ -9,7 +9,11 @@ $(function(){
 			type = 'time';
 
 	for (var i = 0; i < days.formNames.length; i++) {
-		$intervals_cont.dateTimeIntervalsBuilder({
+		var $dayCont = $('<div>');
+
+		$intervals_cont.append($dayCont);
+
+		$dayCont.dateTimeIntervalsBuilder({
 			name: days.formNames[i],
 			type: type,
 			title: days.titles[i]

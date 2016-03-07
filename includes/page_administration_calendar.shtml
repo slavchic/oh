@@ -2,9 +2,12 @@
 	<div class="row">
 		<section class="col-md-8 administration calendar">
 			<!--#include virtual="administration_nav.shtml" -->
-			<div class="col-md-12">
-				<p class="text-warning h4 mt0 mb30">Select dates and areas when your store will be closed</p>
-				<div id="calendar" class="mt15"></div>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="text-warning h4 mt0 mb30">Select dates and areas when your store will be closed</p>
+
+					<div id="calendar" class="mt15"></div>
+				</div>
 			</div>
 		</section>
 	</div>

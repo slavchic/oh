@@ -3,24 +3,27 @@
 		<section class="col-md-8 administration">
 			<!--#include virtual="administration_nav.shtml" -->
 
-			<div class="col-md-12 clearfix pb30 mb30 divider_b">
-				<a class="btn btn-default pull-right" href="administration_dashboard.shtml"><i class="fa fa-chevron-left"></i> Cancel and back to list</a>
-				<h2 class="nm">Adding company - <span class="text-info">Opening hours</span></h2>
-			</div>
-			<div class="col-md-12">
-				<form id="add_company_form" method="post" action="administration_dashboard.shtml">
-					<div class="clearfix mb30" id="add_company_form_intervals"></div>
+			<div class="row">
+				<div class="col-md-12 clearfix pb30 mb30 divider_b">
+					<a class="btn btn-default pull-right hidden-xs ml10" href="administration_dashboard.shtml"><i class="fa fa-chevron-left"></i> Cancel and back to list</a>
 
-					<div class="divider_t clearfix mt20 pt20">
-						<div  class="col-sm-12 text-right">
-							<a href="administration_dashboard.shtml" class="btn btn-lg btn-default mr10">Cancel</a>
-							<button type="submit" class="btn btn-lg btn-primary">Finish <i class="fa fa-check"></i>
-							</button>
+					<h2 class="nm">Adding company - <span class="text-info">Opening hours</span></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<form id="add_company_form" method="post" action="administration_dashboard.shtml">
+						<div class="clearfix mb30" id="add_company_form_intervals"></div>
+						<div class="divider_t clearfix mt20 pt20">
+							<div class="col-sm-12 text-right">
+								<a href="administration_dashboard.shtml" class="btn btn-lg btn-default mr10">Cancel</a>
+								<button type="submit" class="btn btn-lg btn-primary">Finish <i class="fa fa-check"></i>
+								</button>
+							</div>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
-
 		</section>
 
 		<div class="col-md-4">

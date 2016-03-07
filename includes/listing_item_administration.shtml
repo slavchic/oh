@@ -29,8 +29,8 @@
 		</div>
 	</div>
 	<div class="details">
-		<a href="../administration_add_company_step1.shtml" class="button">Modify</a>
-		<a href="#" class="button default sm mt5 more"><i class="fa fa-clock-o"></i> Schedule</a>
-		<a href="#" class="button sm mt5 danger more"><i class="fa fa-times"></i> Delete</a>
+		<a href="../administration_add_company_step1.shtml" class="button sm-xs">Modify</a>
+		<a href="#" class="button default sm mt5"><i class="fa fa-clock-o"></i> Schedule</a>
+		<a href="#" class="button sm mt5 danger"><i class="fa fa-times"></i> Delete</a>
 	</div>
 </div>

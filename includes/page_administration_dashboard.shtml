@@ -3,17 +3,44 @@
 		<section class="col-md-8 administration">
 			<!--#include virtual="administration_nav.shtml" -->
 
-			<div class="col-md-12 clearfix pb30 mb30 divider_b">
-				<a class="btn btn-primary btn-lg pull-right" href="../administration_add_company_step1.shtml"><i class="fa fa-plus"></i> Add your Store</a>
-				You have no companies yet.<br><span class="text-info">Please feel free to press the button <i class="fa fa-arrow-right"></i></span>
+			<div class="row">
+				<div class="col-md-12 clearfix pb30 mb30 divider_b">
+					<div class="row">
+						<div class="col-sm-8 mb15">
+							You have no companies yet.<br><span class="text-info">Please feel free to press the button <i class="fa fa-arrow-right"></i></span>
+						</div>
+						<div class="col-sm-4 text-right">
+							<a class="btn btn-primary btn-lg" href="administration_add_company_step1.shtml"><i class="fa fa-plus"></i> Add your Store</a>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="listing">
-				<!--#set var="company_status" value="closed" -->
-				<!--#include virtual="listing_item_administration.shtml" -->
-				<!--#include virtual="listing_item_administration.shtml" -->
-				<!--#set var="company_status" value="open" -->
-				<!--#include virtual="listing_item_administration.shtml" -->
+			<div class="row">
+				<div class="listing">
+					<!--#set var="company_status" value="closed" -->
+					<!--#include virtual="listing_item_administration.shtml" -->
+					<!--#include virtual="listing_item_administration.shtml" -->
+					<!--#set var="company_status" value="open" -->
+					<!--#include virtual="listing_item_administration.shtml" -->
+				</div>
+				<nav class="mb30">
+					<ul class="pagination pagination-lg">
+						<li class="disabled">
+							<a class="fa fa-chevron-left" href="#"></a>
+						</li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li>
+							<a class="fa fa-chevron-right" href="#">
+							</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
+
 
 		</section>
 
