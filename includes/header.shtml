@@ -6,6 +6,7 @@
 		<form class="search_box" action="listing.shtml">
 			<input type="text" name="what" placeholder="What?"/>
 			<input type="text" name="where" placeholder="Where?"/>
+			<a href="#" class="get_location_ico fa fa-dot-circle-o"><span>Use your location</span></a>
 			<button type="submit" class="fa fa-search"></button>
 		</form>
 

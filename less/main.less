@@ -29,6 +29,8 @@
 
 @footer_height: 60px;
 
+@ff_main: "Roboto", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", sans-serif;
+
 html {
   height: 100%;
 }
@@ -39,7 +41,7 @@ body {
   padding-bottom: @footer_height;
   background-color: @main_bk;
   font-weight: 300;
-  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", sans-serif;
+  font-family: @ff_main;
   @media (max-width: @screen-xs) {
     font-weight: 400;
   }
@@ -981,6 +983,7 @@ article {
     }
     &:last-of-type {
       border-left-width: 0;
+      padding-right: 40px;
     }
 //    @media (max-width: @screen-md) {
 //      width: 300px;
@@ -999,6 +1002,39 @@ article {
       &:last-of-type {
         margin-top: 10px;
         border-left-width: 1px;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .get_location_ico {
+    .pa;
+    right: 90px;
+    top: 18px;
+    font-size: 25px;
+    &:hover {
+      > span {
+        display: block;
+      }
+    }
+    > span {
+      position: absolute;
+      top: 0;
+      right: 28px;
+      display: none;
+      line-height: 23px;
+      background-color: #fff;
+      font-family: @ff_main;
+      font-size: @font-size-base;
+      color: @text_light;
+    }
+    @media (max-width: @screen-xs) {
+      right: 60px;
+      top: 60px;
+      font-size: 20px;
+      > span {
+        line-height: 17px;
       }
     }
   }
@@ -1057,6 +1093,19 @@ article {
         max-height: 150px;
       }
     }
+    .get_location_ico {
+      right: 50px;
+      top: 9px;
+      font-size: 22px;
+      opacity: .5;
+      &:hover {
+        opacity: 1;
+      }
+      @media (max-width: @screen-sm) {
+        right: 76px;
+        top: 75px;
+      }
+    }
     input {
       height: 40px;
       border-width: 0;
@@ -1064,6 +1113,11 @@ article {
       &:first-of-type {
         border-right-color: fade(#000, 10%);
         border-right-width: 1px;
+      }
+      &:last-of-type {
+        @media (min-width: @screen-sm) {
+          padding-right: 80px;
+        }
       }
       @media (max-width: @screen-md) {
         width: 200px;
@@ -1075,6 +1129,7 @@ article {
         &:last-of-type {
           margin-top: 10px;
           border-left-width: 1px;
+
         }
       }
     }

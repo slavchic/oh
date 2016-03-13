@@ -31,6 +31,26 @@ $.fn.switchToggleClass = function (class_1, class_2) {
 	}
 	return o;
 };
+
+fetchAddress = function (p, callback) {
+	var Position = new google.maps.LatLng(p.coords.latitude, p.coords.longitude),
+			Locater = new google.maps.Geocoder();
+
+	Locater.geocode({'latLng': Position}, function (results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			var _r = results[0];
+			callback(_r.formatted_address)
+		}
+	});
+}
+getUserLocation = function (callback_fn) {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function (position) {
+			fetchAddress(position, callback_fn);
+		});
+	}
+}
+
 $(function () {
 	// fixed banner (affix)
 	$(window).on('load scroll', function (e) {
@@ -51,6 +71,14 @@ $(function () {
 		$btn.toggleClass('active fa-times');
 		$search_cont.toggleClass('open');
 
+	})
+
+	$('.get_location_ico').click(function(e){
+		var relatedInp = $(this).siblings('input[name=where]');
+		getUserLocation(function (result) {
+			relatedInp.val(result)
+		});
+		return false
 	})
 
 	$('[data-toggle="login_modal"]').click(function () {

@@ -97,8 +97,8 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		var dic = o.dom.intervalContainers,
 				container_id = 'cont_' + o.intervalContainersCount,
 				bd = dic[container_id] = {}, // block dom
-				containers_class = 'col-sm-3 col-xs-7',
-				controls_containers_class = 'col-sm-3 col-xs-5'
+				containers_class = (o.maxTimeIntervals > 1) ? 'col-sm-3 col-xs-7' : 'col-sm-3',
+				controls_containers_class = (o.maxTimeIntervals > 1) ? 'col-sm-3 col-xs-5' : 'dn'
 
 		bd.$wrapper = $('<div class="clearfix" data-container-id="' + container_id + '">')
 		bd.$label = $('<label class="' + containers_class + '">' + o.title + ' </label>')
