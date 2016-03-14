@@ -1,7 +1,7 @@
 <div class="top_wrapper">
 	<div class="container">
 		<!--#include virtual="top_nav.shtml" -->
-		<div class="logo"></div>
+		<div class="logo at"></div>
 	</div>
 </div>
 <div class="search_wrapper">

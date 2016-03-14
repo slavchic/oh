@@ -850,9 +850,14 @@ article {
     .logo {
       height: 256px;
       margin-bottom: -17px;
-      background-image: url("../images/logo.png");
       background-repeat: no-repeat;
       background-position: center;
+      &.at {
+        background-image: url("../images/logo_at.png");
+      }
+      &.ch {
+        background-image: url("../images/logo_ch.png");
+      }
       @media (max-width: @screen-lg) {
         height: 180px;
         background-size: contain;
@@ -1536,18 +1541,21 @@ form {
   .pr;
   display: block;
   background-color: @gray-lighter;
-  &:before {
-    .pa;
-    top: calc(~"50% - .7em");
-    width: 100%;
-    height: 1px;
-    content: 'banner';
-    font-size: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    .acenter;
-    color: #fff;
+  > div {
+    margin: 0 auto;
   }
+//  &:before {
+//    .pa;
+//    top: calc(~"50% - .7em");
+//    width: 100%;
+//    height: 1px;
+//    content: 'banner';
+//    font-size: 30px;
+//    font-weight: bold;
+//    text-transform: uppercase;
+//    .acenter;
+//    color: #fff;
+//  }
   &.right_fixed {
     @media (min-width: 1790px) {
       position: fixed;
