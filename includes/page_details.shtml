@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<section class="col-md-8">
+		<section class="left">
 			<a href="#" class="text-link-lg mt10 pull-right visible-sm visible-md visible-lg report_btn">Wrong openinghours?</a>
 			<h2 class="title">Long super company name</h2>
 			<div class="company_details">
@@ -23,6 +23,17 @@
 						<div class="addthis_sharing_toolbox social"></div>
 					</div>
 				</div>
+				<div class="bn visible-xs mb15">
+					<!-- /179320732/OZ_Banner_Mobile_DE -->
+					<div id='div-gpt-ad-1457974065784-0'>
+						<script type='text/javascript'>
+							googletag.cmd.push(function () {
+								googletag.display('div-gpt-ad-1457974065784-0');
+							});
+						</script>
+					</div>
+				</div>
+
 				<div class="schedule">
 					<nav class="nav">
 						<a id="prev-week" href="#" class="left"><i class="fa fa-chevron-circle-left"></i></a>
@@ -85,7 +96,7 @@
 				</div>
 			</div>
 		</section>
-		<div class="col-md-4">
+		<div class="right">
 			<h2 class="title">Location</h2>
 
 			<div class="map">
@@ -98,12 +109,12 @@
 					<a href="#" class="fa fa-location-arrow" title="Open in external app"></a>
 				</nav>
 			</div>
-			<div class="bn mt30 mb30">
-				<!-- /179320732/OZ_MR_DE -->
-				<div id='div-gpt-ad-1457961589204-3'>
+			<div class="bn mb30">
+				<!-- /179320732/OZ_MR_BIG_DE -->
+				<div id='div-gpt-ad-1457974065784-9'>
 					<script type='text/javascript'>
 						googletag.cmd.push(function () {
-							googletag.display('div-gpt-ad-1457961589204-3');
+							googletag.display('div-gpt-ad-1457974065784-9');
 						});
 					</script>
 				</div>
@@ -111,7 +122,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-8">
+		<div class="left">
 			<h2 class="title">Stores nearby</h2>
 
 			<div class="listing">
@@ -119,10 +130,20 @@
 				<!-- randomizing status -->
 				<!--#set var="company_status" value="closed" -->
 				<!--#include virtual="listing_item.shtml" -->
-				<!--#include virtual="listing_item.shtml" --></div>
-			<div class="bn mt30 mb30">
+			</div>
+			<div class="bn visible-xs mb15 mt15">
+				<!-- /179320732/OZ_Banner_Mobile_DE -->
+				<div id='div-gpt-ad-1457974065784-1'>
+					<script type='text/javascript'>
+						googletag.cmd.push(function () {
+							googletag.display('div-gpt-ad-1457961589204-0');
+						});
+					</script>
+				</div>
+			</div>
+			<div class="bn mt30 mb30 visible-lg">
 				<!-- /179320732/OZ_Leaderboard_DE -->
-				<div id='div-gpt-ad-1457961589204-2' style='height:90px; width:728px;'>
+				<div id='div-gpt-ad-1457974065784-6'>
 					<script type='text/javascript'>
 						googletag.cmd.push(function () {
 							googletag.display('div-gpt-ad-1457961589204-2');
@@ -131,6 +152,7 @@
 				</div>
 			</div>
 			<div class="listing mb30">
+				<!--#include virtual="listing_item.shtml" -->
 				<!--#set var="company_status" value="open" -->
 				<!--#include virtual="listing_item.shtml" -->
 				<!--#set var="company_status" value="closed" -->
@@ -138,19 +160,8 @@
 				<!--#include virtual="listing_item.shtml" -->
 			</div>
 		</div>
-		<aside class="col-md-4 hidden-sm hidden-xs">
-			<h2 class="title">&nbsp;</h2>
-
-			<div class="bn right_fixed mt10" data-offset-initial="140" data-offset-end="15">
-				<!-- /179320732/OZ_Halfpage_DE -->
-				<div id='div-gpt-ad-1457961589204-1'>
-					<script type='text/javascript'>
-						googletag.cmd.push(function () {
-							googletag.display('div-gpt-ad-1457961589204-1');
-						});
-					</script>
-				</div>
-			</div>
+		<aside class="right hidden-sm hidden-xs">
+			<!--#include virtual="aside_details.shtml" -->
 		</aside>
 	</div>
 </div>

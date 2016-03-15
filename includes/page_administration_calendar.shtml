@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<section class="col-md-8 administration calendar">
+		<section class="left administration calendar">
 			<!--#include virtual="administration_nav.shtml" -->
 			<div class="row">
 				<div class="col-md-12">

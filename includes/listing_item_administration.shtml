@@ -21,12 +21,12 @@
 				09:00 - 21:00
 			</div>
 		</div>
-		<div>
-			<div>Morgen</div>
-			<div>09:00 - 21:00<br>
-				09:00 - 21:00
-			</div>
-		</div>
+		<!--<div>-->
+			<!--<div>Morgen</div>-->
+			<!--<div>09:00 - 21:00<br>-->
+				<!--09:00 - 21:00-->
+			<!--</div>-->
+		<!--</div>-->
 	</div>
 	<div class="details">
 		<a href="../administration_add_company_step1.shtml" class="button sm-xs">Modify</a>

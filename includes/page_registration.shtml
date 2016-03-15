@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<section class="col-md-8">
+		<section class="left">
 			<h2 class="title">Registration</h2>
 
 			<form id="register_form" method="post" action="administration_dashboard.shtml">
@@ -118,7 +118,7 @@
 
 		</section>
 
-		<div class="col-md-4">
+		<div class="rught">
 			<!--<h2 class="title">Little help</h2>-->
 			<!--<div class="col-sm-12">-->
 				<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>-->

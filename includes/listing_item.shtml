@@ -1,7 +1,14 @@
 <div class="item">
 	<div class="info">
 		<a href="#" class="title">Lorem ipsum dolor sit amet</a>
-		<address>Santa Claus Sht. 51</address>
+		<address>
+			<span class="addr">Santa Claus Sht. 51</span>
+			<!--#if expr="$page=listing" -->
+			<span class="distance"><i class="fa fa-dot-circle-o"></i> 563m from you</span>
+			<!--#elif expr="$page=details" -->
+			<span class="distance"><i class="fa fa-dot-circle-o"></i> 563m from the origin store</span>
+			<!--#endif -->
+		</address>
 		<!--#if expr="$company_status=closed" -->
 		<div class="footer">
 			<img src="https://www.times.ch/images/opening/Starbucks_Coffee_2dc6b497.jpg" alt="" class="logo"/>
@@ -22,12 +29,12 @@
 				09:00 - 21:00
 			</div>
 		</div>
-		<div>
-			<div>Morgen</div>
-			<div>09:00 - 21:00<br>
-				09:00 - 21:00
-			</div>
-		</div>
+		<!--<div>-->
+			<!--<div>Morgen</div>-->
+			<!--<div>09:00 - 21:00<br>-->
+				<!--09:00 - 21:00-->
+			<!--</div>-->
+		<!--</div>-->
 	</div>
 	<div class="details">
 		<a class="button" href="details.shtml">Details</a>

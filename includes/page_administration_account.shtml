@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<section class="col-md-8 administration">
+		<section class="left administration">
 			<!--#include virtual="administration_nav.shtml" -->
 			<div class="row">
 				<div class="col-md-12">
@@ -113,7 +113,7 @@
 			</div>
 
 		</section>
-		<div class="col-md-4">
+		<div class="right">
 			<!--<h2 class="title">Little help</h2>-->
 			<!--<div class="col-sm-12">-->
 			<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>-->

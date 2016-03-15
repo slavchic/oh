@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<section class="col-md-8">
+		<section class="left">
 			<h2 class="title">Some blog super long super long title</h2>
 			<article>
 
@@ -72,28 +72,8 @@
 			</article>
 		</section>
 
-		<div class="col-md-4">
-			<h2 class="title">Read more</h2>
-			<div class="article_list">
-				<div class="item">
-					<a href="blog_item.shtml">Some long title Lorem ipsum dolor.</a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>
-
-					<div class="bottom-line">12.06.2016 14:30</div>
-				</div>
-				<div class="item">
-					<a href="blog_item.shtml">Some long title Lorem ipsum dolor.</a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>
-
-					<div class="bottom-line">12.06.2016 14:30</div>
-				</div>
-				<div class="item">
-					<a href="blog_item.shtml">Some long title Lorem ipsum dolor.</a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque nemo repellendus?</p>
-
-					<div class="bottom-line">12.06.2016 14:30</div>
-				</div>
-			</div>
+		<div class="right">
+			<!--#include virtual="aside_blog_item.shtml" -->
 
 		</div>
 	</div>

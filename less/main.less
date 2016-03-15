@@ -95,14 +95,35 @@ a {
 
   background-color: #fff;
   > .container > .row {
+    .dt;
     &:first-child {
       padding-top: 40px;
     }
     &:last-child {
       padding-bottom: 50px;
     }
+    @media (max-width: @screen-lg) {
+      .db;
+      width: auto;
+    }
     & + .row {
       margin-top: @grid-gutter-width;
+    }
+
+    > .left {
+      .dtc;
+      padding: 0 @grid-gutter-width/2;
+    }
+    > .right {
+      .dtc;
+      width: 366px;
+      padding: 0 @grid-gutter-width/2;
+    }
+    > .left, > .right {
+      @media (max-width: @screen-lg) {
+        width: auto;
+        .db;
+      }
     }
   }
   h1, h2, h3 {
@@ -290,8 +311,19 @@ a {
       address {
         color: @text_light;
         margin-bottom: 15px;
+        .addr {
+          margin-right: 10px;
+        }
         @media (max-width: @screen-xs) {
           margin-bottom: 0;
+        }
+        .distance {
+          .dib;
+          font-size: @font-size-small - 1;
+          color: #5ba386;
+          i {
+            opacity: .5;
+          }
         }
       }
       .footer {
@@ -751,6 +783,11 @@ article {
   a {
     text-decoration: none;
   }
+  figure {
+    img {
+      width: 100%;
+    }
+  }
   .carousel-indicators {
     top: 65%;
   }
@@ -852,11 +889,13 @@ article {
       margin-bottom: -17px;
       background-repeat: no-repeat;
       background-position: center;
-      &.at {
-        background-image: url("../images/logo_at.png");
-      }
-      &.ch {
-        background-image: url("../images/logo_ch.png");
+      @media (min-width: @screen-sm) {
+        &.at {
+          background-image: url("../images/logo_at.png");
+        }
+        &.ch {
+          background-image: url("../images/logo_ch.png");
+        }
       }
       @media (max-width: @screen-lg) {
         height: 180px;
@@ -1540,9 +1579,17 @@ form {
 .bn {
   .pr;
   display: block;
-  background-color: @gray-lighter;
+  //background-color: @gray-lighter;
+  @media (max-width: @screen-xs) {
+    margin-left: -@grid-gutter-width/2;
+    margin-right: -@grid-gutter-width/2;
+  }
   > div {
+    text-align: center;
     margin: 0 auto;
+     > div {
+      margin: 0 auto;
+    }
   }
 //  &:before {
 //    .pa;
