@@ -1,6 +1,6 @@
 <h2 class="title">Popular places</h2>
 
-<div id="popular_places_gallery" class="carousel slide image_gallery" data-ride="carousel">
+<div id="popular_places_gallery" class="carousel slide image_gallery mb10" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
 		<li data-target="#popular_places_gallery" data-slide-to="0" class="active"></li>

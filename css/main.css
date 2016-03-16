@@ -8439,6 +8439,9 @@ section .article_list {
 .link-list > *:last-child {
   border-bottom: none;
 }
+.image_gallery {
+  margin-top: -15px;
+}
 .image_gallery a {
   text-decoration: none;
 }

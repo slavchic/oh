@@ -97,28 +97,7 @@
 			</div>
 		</section>
 		<div class="right">
-			<h2 class="title">Location</h2>
-
-			<div class="map">
-				<div id="map-canvas" class="map_cont" style="height: 250px"></div>
-				<nav>
-					<span class="title"><b>Route from</b><br>your location</span>
-					<a href="#" class="fa fa-male"></a>
-					<a class="fa fa-bicycle" href="#"></a>
-					<a href="#" class="fa fa-car"></a>
-					<a href="#" class="fa fa-location-arrow" title="Open in external app"></a>
-				</nav>
-			</div>
-			<div class="bn">
-				<!-- /179320732/OZ_MR_BIG_DE -->
-				<div id='div-gpt-ad-1457974065784-9'>
-					<script type='text/javascript'>
-						googletag.cmd.push(function () {
-							googletag.display('div-gpt-ad-1457974065784-9');
-						});
-					</script>
-				</div>
-			</div>
+			<!--#include virtual="aside_details.shtml" -->
 		</div>
 	</div>
 	<div class="row">
@@ -160,8 +139,19 @@
 				<!--#include virtual="listing_item.shtml" -->
 			</div>
 		</div>
-		<aside class="right hidden-sm hidden-xs">
-			<!--#include virtual="aside_details.shtml" -->
+		<aside class="right hidden-sm hidden-xs"><h2 class="title">&nbsp;</h2>
+
+			<div class="bn right_fixed mt10" data-offset-initial="140" data-offset-end="15">
+				<!-- /179320732/OZ_Halfpage_DE -->
+				<div id='div-gpt-ad-1457974065784-4'>
+					<script type='text/javascript'>
+						googletag.cmd.push(function () {
+							googletag.display('div-gpt-ad-1457974065784-4');
+						});
+					</script>
+				</div>
+			</div>
+
 		</aside>
 	</div>
 </div>
