@@ -7727,6 +7727,16 @@ a:hover {
   font-weight: 600;
   text-transform: uppercase;
 }
+@media (max-width: 480px) {
+  #main h1,
+  #main h2,
+  #main h3 {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 #main h1:first-child,
 #main h2:first-child,
 #main h3:first-child {
@@ -7844,6 +7854,8 @@ a:hover {
   .listing {
     display: block;
     width: auto;
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }
 .listing .item {
@@ -7925,7 +7937,7 @@ a:hover {
 @media (max-width: 480px) {
   .listing .item .info {
     width: 100%;
-    padding: 15px 15px 15px;
+    padding: 15px 15px 0;
   }
 }
 .listing .item .info address {
@@ -7954,7 +7966,7 @@ a:hover {
 @media (max-width: 480px) {
   .listing .item .info .footer {
     position: absolute;
-    bottom: 25px;
+    bottom: 15px;
   }
 }
 .listing .item .info .status {
@@ -7996,7 +8008,7 @@ a:hover {
 }
 @media (max-width: 480px) {
   .listing .item .hours {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding: 0 15px;
     white-space: nowrap;
   }
@@ -8008,8 +8020,11 @@ a:hover {
 .listing .item .hours > div + div {
   margin-top: 10px;
 }
-.listing .item .hours > div.today > div:first-child {
-  color: #57c05c;
+@media (max-width: 480px) {
+  .listing .item .hours > div.today > div:first-child {
+    font-weight: bold;
+    color: #777777;
+  }
 }
 @media (max-width: 1200px) {
   .listing .item .hours > div {
@@ -8080,6 +8095,7 @@ a:hover {
     display: block;
     width: 100%;
     padding: 0 15px 15px 0;
+    margin-top: -10px;
   }
 }
 .listing + nav {
