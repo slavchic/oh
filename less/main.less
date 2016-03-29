@@ -513,15 +513,20 @@ article {
   }
 }
 
+.company_details_wrapper {
+  margin: -@grid-gutter-width -@grid-gutter-width 0;
+  @media (max-width: @screen-sm) {
+    margin: 0;
+  }
+}
 .company_details {
   display: table;
+  width: 100%;
   table-layout: fixed;
   border-spacing: @grid-gutter-width;
-  margin: -@grid-gutter-width -@grid-gutter-width 0 ;
   .status_icons;
   @media (max-width: @screen-sm) {
     border-spacing: 0;
-    margin: 0;
   }
   > * {
     display: table-cell;

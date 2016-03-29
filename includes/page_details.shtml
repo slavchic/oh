@@ -3,98 +3,99 @@
 		<section class="left">
 			<a href="#" class="text-link-lg mt10 pull-right visible-sm visible-md visible-lg report_btn">Wrong openinghours?</a>
 			<h2 class="title">Long super company name</h2>
-			<div class="company_details">
-				<div class="infocard">
-					<div>
-						<div class="logo">
-							<img src="https://www.times.ch/images/opening/Moebel_Pfister_AG_3e36dbcd.jpg" class="img-responsive">
+			<div class="company_details_wrapper">
+				<div class="company_details">
+					<div class="infocard">
+						<div>
+							<div class="logo">
+								<img src="https://www.times.ch/images/opening/Moebel_Pfister_AG_3e36dbcd.jpg" class="img-responsive">
+							</div>
+							<div class="status closed"><b>Closed</b></div>
 						</div>
-						<div class="status closed"><b>Closed</b></div>
-					</div>
-					<div>
-						<address>
-							<b>Barfachschule Thörig</b><br> Steinhausweg 1<br> 8006 Zürich
-						</address>
-						<p class="phone"><b>+788 999 44 55</b></p>
+						<div>
+							<address>
+								<b>Barfachschule Thörig</b><br> Steinhausweg 1<br> 8006 Zürich
+							</address>
+							<p class="phone"><b>+788 999 44 55</b></p>
+							<a href="http://some.com" class="btn btn-default mt15 mr10" target="_blank" rel="nofollow">Open site</a>
+							<a href="#" class="btn btn-primary mt15" id="send_message_btn">Leave message</a>
 
-						<a href="http://some.com" class="btn btn-default mt15 mr10" target="_blank" rel="nofollow">Open site</a>
-						<a href="#" class="btn btn-primary mt15" id="send_message_btn">Leave message</a>
-
-						<div class="addthis_sharing_toolbox social"></div>
+							<div class="addthis_sharing_toolbox social"></div>
+						</div>
 					</div>
-				</div>
-				<div class="bn visible-xs mb15">
-					<!-- /179320732/OZ_Banner_Mobile_DE -->
-					<div id='div-gpt-ad-1457974065784-0'>
-						<script type='text/javascript'>
-							googletag.cmd.push(function () {
-								googletag.display('div-gpt-ad-1457974065784-0');
-							});
-						</script>
+					<div class="bn visible-xs mb15">
+						<!-- /179320732/OZ_Banner_Mobile_DE -->
+						<div id='div-gpt-ad-1457974065784-0'>
+							<script type='text/javascript'>
+								googletag.cmd.push(function () {
+									googletag.display('div-gpt-ad-1457974065784-0');
+								});
+							</script>
+						</div>
 					</div>
-				</div>
-
-				<div class="schedule">
-					<nav class="nav">
-						<a id="prev-week" href="#" class="left"><i class="fa fa-chevron-circle-left"></i></a>
-						<span class="date">Dec 28 — Jan 3</span>
-						<a id="next-week" href="#" class="right"><i class="fa fa-chevron-circle-right"></i></a>
-					</nav>
-					<table class="table table-striped">
-						<tbody>
-							<tr>
-								<th>Mo</th>
-								<td class="time">
-									<span class="open">08:00 - 18:00</span>
-									<span class="closed">08:00 - 18:00</span>
-								</td>
-							</tr>
-							<tr>
-								<th>Tu</th>
-								<td class="time">
-									<span class="closed">08:00 - 18:00</span>
-								</td>
-							</tr>
-							<tr>
-								<th>We</th>
-								<td class="time">
-									<span class="open">08:00 - 18:00</span>
-								</td>
-							</tr>
-							<tr>
-								<th>Th</th>
-								<td class="time">
-									<span class="open">08:00 - 18:00</span>
-								</td>
-							</tr>
-							<tr>
-								<th>Fr</th>
-								<td class="time">
-									<span class="closed">Closed - "New Years Day"</span>
-								</td>
-							</tr>
-							<tr>
-								<th>Sa</th>
-								<td class="time">
-									<span class="closed">Closed - "Berchtolds Day"</span>
-								</td>
-							</tr>
-							<tr>
-								<th>Su</th>
-								<td class="time">
-									<span class="closed">08:00 - 18:00</span>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="text-center mt15 visible-xs">
-						<a href="#" class="text-link-lg report_btn">Wrong openinghours?</a>
-					</div>
-					<div class="about">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nihil possimus quis tempore totam voluptates voluptatibus. Assumenda doloremque eos fugiat officia soluta? Expedita ipsam minima nesciunt sapiente soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, cumque nemo rem repellendus soluta vel!
+					<div class="schedule">
+						<nav class="nav">
+							<a id="prev-week" href="#" class="left"><i class="fa fa-chevron-circle-left"></i></a>
+							<span class="date">Dec 28 — Jan 3</span>
+							<a id="next-week" href="#" class="right"><i class="fa fa-chevron-circle-right"></i></a>
+						</nav>
+						<table class="table table-striped">
+							<tbody>
+								<tr>
+									<th>Mo</th>
+									<td class="time">
+										<span class="open">08:00 - 18:00</span>
+										<span class="closed">08:00 - 18:00</span>
+									</td>
+								</tr>
+								<tr>
+									<th>Tu</th>
+									<td class="time">
+										<span class="closed">08:00 - 18:00</span>
+									</td>
+								</tr>
+								<tr>
+									<th>We</th>
+									<td class="time">
+										<span class="open">08:00 - 18:00</span>
+									</td>
+								</tr>
+								<tr>
+									<th>Th</th>
+									<td class="time">
+										<span class="open">08:00 - 18:00</span>
+									</td>
+								</tr>
+								<tr>
+									<th>Fr</th>
+									<td class="time">
+										<span class="closed">Closed - "New Years Day"</span>
+									</td>
+								</tr>
+								<tr>
+									<th>Sa</th>
+									<td class="time">
+										<span class="closed">Closed - "Berchtolds Day"</span>
+									</td>
+								</tr>
+								<tr>
+									<th>Su</th>
+									<td class="time">
+										<span class="closed">08:00 - 18:00</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="text-center mt15 visible-xs">
+							<a href="#" class="text-link-lg report_btn">Wrong openinghours?</a>
+						</div>
+						<div class="about">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nihil possimus quis tempore totam voluptates voluptatibus. Assumenda doloremque eos fugiat officia soluta? Expedita ipsam minima nesciunt sapiente soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, cumque nemo rem repellendus soluta vel!
+						</div>
 					</div>
 				</div>
 			</div>
+
 		</section>
 		<div class="right">
 			<!--#include virtual="aside_details.shtml" -->
