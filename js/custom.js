@@ -1,6 +1,22 @@
 dbg = function () {
 	console.log(arguments)
 }
+datetimepickerOptions = {
+	time: {
+		useCurrent: false,
+		format: 'HH:mm',
+		icons: {
+			time: "fa fa-clock-o",
+			up: "fa fa-arrow-up",
+			down: "fa fa-arrow-down"
+		}
+	},
+	date: {
+		useCurrent: false,
+		format: 'YYYY-MM-DD'
+	}
+}
+
 function isEmpty(obj) {
 	var hasOwnProperty = Object.prototype.hasOwnProperty;
 	// null and undefined are "empty"

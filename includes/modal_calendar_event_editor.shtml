@@ -1,3 +1,67 @@
+<script>
+	/*
+   -----Example of real data------
+
+	 calendarEventsData = [
+		 {
+			 title: "Some event name",
+			 start: 2016-02-01,
+			 end: 2016-02-01,
+	 		 region:[37,45,67],
+	 		 companies: ['company_id_1', 'company_id_2'],
+	 		 timeIntervals: [['14:10', '15:20'], ['16:10', '17:20']]
+		 }
+		]
+
+	* */
+	calendarEventsData = [
+		{
+			title: "Some event",
+			start: moment().day(-10).hours(8).minutes(0).format(),
+			end: moment().day(-8).hours(9).minutes(0).format(),
+			status: 'opened',
+			regions: [37,30],
+			companies: ['company_id_1'],
+			timeIntervals: [['14:10', '15:20'], ['16:10', '17:20']]
+		},
+		{
+			title: 'Closed - Super holidays',
+			start: moment().day(+6).hours(8).minutes(0).format(), //'2016-02-01' '2016-02-09T16:00:00'
+			end: moment().day(+6).hours(17).minutes(0).format(), //'2016-02-01'
+			status: 'closed',
+			regions: [37],
+			companies: ['company_id_2']
+		},
+		{
+			title: 'Closed',
+			start: moment().day(+4).hours(8).minutes(0).format(), //'2016-02-01' '2016-02-09T16:00:00'
+			end: moment().day(+4).hours(12).minutes(0).format() //'2016-02-01'
+		},
+		{
+			title: 'Closed - New year',
+			start: moment().day(+4).hours(13).minutes(0).format(), //'2016-02-01' '2016-02-09T16:00:00'
+			end: moment().day(+4).hours(16).minutes(0).format() //'2016-02-01'
+		},
+		{
+			title: 'Closed - Christmas',
+			start: moment().day(+2).hours(8).minutes(0).format(), //'2016-02-01' '2016-02-09T16:00:00'
+			end: moment().day(+2).hours(20).minutes(0).format() //'2016-02-01'
+		},
+		{
+
+			title: 'Closed - simply closed',
+			start: moment().day(+1).hours(0).minutes(0).format(), //'2016-02-01' '2016-02-09T16:00:00'
+			end: moment().day(+1).hours(23).minutes(59).format(), //'2016-02-01' '2016-02-09T16:00:00'
+			allDay: true
+		},
+		{
+			title: 'Closed',
+			start: moment().day(0).hours(0).minutes(0).format(), //'2016-02-01' '2016-02-09T16:00:00'
+			end: moment().day(0).hours(23).minutes(59).format() //'2016-02-01' '2016-02-09T16:00:00'
+			//allDay: true
+		}
+	]
+</script>
 <div class="modal fade" id="calendar-events-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -6,24 +70,24 @@
 				<h3 class="modal-title">New event</h3>
 			</div>
 			<div class="modal-body">
-				<form action="#">
-					<div class="row mb30">
-						<div class="col-md-12">
+				<form action="#" id="add_event_form">
+					<div class="row validation">
+						<div class="col-md-9">
 							<label for="add_event_name">Event name</label>
 							<input type="text" name="name" class="form-control" id="add_event_name">
 						</div>
 					</div>
-					<div class="row mb30">
+					<div class="row validation">
 						<label class="col-md-3" for="add_event_status">Status</label>
 						<div class="col-md-6">
-							<input type="checkbox" name="status" checked data-width="100px" data-toggle="toggle" data-on="Opened" data-off="Closed" id="add_event_status">
+							<input type="checkbox" name="status"  data-width="100px" data-toggle="toggle" data-on="Opened" data-off="Closed" id="add_event_status">
 						</div>
 					</div>
-					<div class="row mb30">
+					<div class="row validation">
 						<div class="form-group">
-							<label class="col-md-3" for="add_event_form_region">Regions</label>
+							<label class="col-md-3" for="add_event_form_regions">Regions</label>
 							<div class="col-md-6">
-								<select id="add_event_form_region" class="w100 select2 form-control" multiple="multiple" name="region" placeholder="Select affected regions">
+								<select id="add_event_form_regions" class="w100 select2 form-control require_from_group" multiple="multiple" name="regions" placeholder="Select affected regions">
 									<option value="37">Aargau</option>
 									<option value="30">Appenzell Innerrhoden</option>
 									<option value="39">Basel-Landschaft</option>
@@ -53,29 +117,32 @@
 							</div>
 						</div>
 					</div>
-					<div class="row mb30">
-						<div class="form-group">
+					<div class="row validation">
+						<div class="form-group ">
 							<label class="col-md-3" for="add_event_form_companies">Companies</label>
 							<div class="col-md-6">
-								<select id="add_event_form_companies" class="select2 form-control" multiple="multiple" name="companies" placeholder="Select affected companies">
+								<select id="add_event_form_companies" class="select2 form-control require_from_group" data-post-init="true" multiple="multiple" name="companies" placeholder="Select affected companies">
 									<option value="company_id_1">My company</option>
 									<option value="company_id_2">My Super Store</option>
 								</select>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12" id="add_event_date_intervals"></div>
-					</div>
-					<div class="row">
-						<div class="col-md-12" id="add_event_time_intervals"></div>
+					<div class="row validation">
+						<div class="col-md-3">
+							<b>Date</b>
+						</div>
+						<div class="col-md-6">
+							<input type="text" class="form-control" name="date" id="add_event_date"/>
+						</div>
 					</div>
 
+					<div class="validation" id="add_event_time_intervals"></div>
 
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary mr5" data-dismiss="modal" id="add_event_save_btn">Save</button> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary mr5" id="add_event_save_btn">Save</button> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>

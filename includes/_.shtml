@@ -50,7 +50,7 @@
 		<!--<script type="text/javascript" src="js/plugins/bootstrap-calendar/components/jstimezonedetect/jstz.min.js"></script>-->
 		<!--<script src="js/plugins/bootstrap-calendar/js/calendar.js"></script>-->
 		<!--<script src="vendor/bootstrap-calendar-master/js/language/de-DE.js"></script>-->
-
+		<script src="js/plugins/validate/additional-methods.js"></script>
 		<script src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
 		<link rel="stylesheet" href="js/plugins/fullcalendar/fullcalendar.css"/>
 

@@ -9084,6 +9084,14 @@ section .article_list {
   position: relative;
   margin-bottom: 35px;
 }
+.validation [class*=col-] span.error,
+.validation[class*=col-] span.error {
+  left: 15px;
+  right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
 .validation span.error {
   position: absolute;
   z-index: 2;
@@ -9487,4 +9495,7 @@ select.select2 {
   height: 0;
   padding: 0;
   border: 0;
+}
+.select2-drop {
+  margin-left: 1px;
 }

@@ -23,28 +23,14 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		}
 	}
 
-	o.datetimepickerOptions =  {
-		time: {
-			format: 'HH:mm',
-			icons: {
-				time: "fa fa-clock-o",
-				up: "fa fa-arrow-up",
-				down: "fa fa-arrow-down"
-			}
-		},
-		date: {
-			format: 'YYYY-MM-DD'
-		}
-	}
-
 	o.inputConfig = {
 		time: {
-			momentFormat: o.datetimepickerOptions.time.format,
+			momentFormat: datetimepickerOptions.time.format,
 			minLimit: '00:00',
 			maxLimit: '23:59'
 		},
 		date: {
-			momentFormat: o.datetimepickerOptions.date.format,
+			momentFormat: datetimepickerOptions.date.format,
 			minLimit: false,
 			maxLimit: false
 		}
@@ -53,7 +39,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 	o.$source_container.append(o.dom.$cont)
 
 	o.reset = function() {
-		dbg('reset')
+		//dbg('reset')
 		o.dom.$cont.empty()
 
 		o.intervalContainersCount = 0
@@ -64,23 +50,28 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 
 	o.applyNewOptions =  function(options){
 		if (options) {
-			if (options.start && options.end) {
+			if (options.intervals && options.intervals.length) {
+
 				var a_container_ids = []
 
 				o.reset()
+
+				for (var i = 0; i < options.intervals.length - 1; i++) { // one row is built already
+					o.addIntervalBlock()
+				}
 
 				setTimeout(function(){ // micro timeout to rebuild dom
 					for (var cont_id in o.dom.intervalContainers) {
 						a_container_ids.push(cont_id)
 					}
+					for (var i = 0; i < a_container_ids.length; i++) {
+						var cont = o.dom.intervalContainers[a_container_ids[i]],
+								$inp_1 = cont.$inp_1,
+								$inp_2 = cont.$inp_2;
 
-					var firstCont = o.dom.intervalContainers[a_container_ids[0]],
-							$inp_1 = firstCont.$inp_1,
-							$inp_2 = firstCont.$inp_2;
-
-					$inp_1.val(options.start.format(o.inputConfig[o.type].momentFormat))
-					$inp_2.val(options.end.format(o.inputConfig[o.type].momentFormat))
-
+						$inp_1.val(options.intervals[i][0])
+						$inp_2.val(options.intervals[i][1])
+					}
 				},10)
 
 			}
@@ -104,8 +95,8 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		bd.$label = $('<label class="' + containers_class + '">' + o.title + ' </label>')
 		bd.$inp_cont_1 = $('<div class="' + containers_class + '">')
 		bd.$inp_cont_2 = $('<div class="' + containers_class + '">')
-		bd.$inp_1 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control" placeholder="From"/>')
-		bd.$inp_2 = $('<input type="text" autocomplete="off" name="' + name + '" class="form-control" placeholder="To"/>')
+		bd.$inp_1 = $('<input type="text" autocomplete="off" name="' + o.name + '" class="form-control" placeholder="From"/>')
+		bd.$inp_2 = $('<input type="text" autocomplete="off" name="' + o.name + '" class="form-control" placeholder="To"/>')
 		bd.$controls = $('<div class="' + controls_containers_class + '">')
 		bd.$remove_btn = $('<button type="button" class="btn btn-danger mr5" title="Remove interval" data-action="remove"><i class="fa fa-minus-circle"></i></button>')
 		bd.$add_btn = $('<button type="button" class="btn btn-primary" title="Add interval" data-action="add"><i class="fa fa-plus-circle"></i></button>');
@@ -115,8 +106,8 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		bd.$inp_cont_2.append(bd.$inp_2)
 		bd.$controls.append(bd.$remove_btn, bd.$add_btn)
 
-		bd.$inp_1.datetimepicker(o.datetimepickerOptions[o.type])
-		bd.$inp_2.datetimepicker(o.datetimepickerOptions[o.type])
+		bd.$inp_1.datetimepicker(datetimepickerOptions[o.type])
+		bd.$inp_2.datetimepicker(datetimepickerOptions[o.type])
 
 		if (o.intervalContainersCount > 1) {
 			bd.$wrapper.addClass('mt10')
@@ -131,6 +122,8 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		o.dom.$cont.append(bd.$wrapper)
 
 		o.updateIntervalBtns()
+
+		o.dom.$cont.trigger('dti-add-block')
 
 	}
 	o.updateLimits = function () {
@@ -160,7 +153,6 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 					inp_2_val = $inp_2.val(),
 					o_ic = o.inputConfig[o.type];
 
-
 			if (!inp_1_val && prevContDom) {
 				if (o.type == 'time') {
 					var prev_inp2_hours = moment(prevContDom.$inp_2.val(), o_ic.momentFormat).get('hours');
@@ -182,9 +174,6 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 					prev_inp2_val = (prevContDom) ? prevContDom.$inp_2.val() : '';
 			//end of var
 
-
-
-
 			if (inp_2_val)
 				inp_1_maxDate = moment(inp_2_val, o_ic.momentFormat);
 
@@ -192,7 +181,6 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 				inp_2_minDate = moment(inp_1_val, o_ic.momentFormat);
 
 			if (!prevContDom && !nextContDom) {
-
 			} else if (!prevContDom && nextContDom) {
 				if (next_inp1_val) inp_2_maxDate = moment(next_inp1_val, o_ic.momentFormat)
 			} else if (prevContDom && next_inp1_val) {
@@ -217,7 +205,7 @@ $.fn.dateTimeIntervalsBuilder = function(options) {
 		if (maxDate) $inp.data("DateTimePicker").maxDate(maxDate)
 	}
 	o.updateIntervalBtns = function() {
-		dbg(o.maxTimeIntervals)
+		//dbg(o.maxTimeIntervals)
 		var elementsCount = o.dom.$cont.children().length;
 
 		o.dom.$cont.children().each(function (i, wrapper) {

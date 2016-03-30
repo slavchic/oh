@@ -1447,6 +1447,15 @@ form {
 .validation {
   .pr;
   margin-bottom: 35px;
+  & [class*=col-], &[class*=col-] {
+    span.error {
+      left: @grid-gutter-width/2;
+      right: @grid-gutter-width/2;
+      margin-left: auto;
+      margin-right: auto;
+      width: auto;
+    }
+  }
   span.error {
     .pa;
     z-index: 2;
@@ -1794,4 +1803,7 @@ select.select2 {
   height: 0;
   padding: 0;
   border: 0;
+}
+.select2-drop {
+  margin-left: 1px;
 }
