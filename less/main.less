@@ -1041,10 +1041,10 @@ article {
     border: 8px solid @lblue_grey;
     border-radius: 0;
     font-size: @font-size-large + 2;
-    &:first-of-type {
+    &:nth-child(1) {
       border-right-width: 1px;
     }
-    &:last-of-type {
+    &:nth-child(2) {
       border-left-width: 0;
       padding-right: 40px;
     }
@@ -1062,7 +1062,7 @@ article {
       padding: 3px 7px;
       border-width: 1px;
       font-size: @font-size-base;
-      &:last-of-type {
+      &:nth-child(2) {
         margin-top: 10px;
         border-left-width: 1px;
       }
@@ -1173,11 +1173,11 @@ article {
       height: 40px;
       border-width: 0;
 
-      &:first-of-type {
+      &:nth-child(1) {
         border-right-color: fade(#000, 10%);
         border-right-width: 1px;
       }
-      &:last-of-type {
+      &:nth-child(2) {
         @media (min-width: @screen-sm) {
           padding-right: 80px;
         }
@@ -1189,7 +1189,7 @@ article {
         .db;
         width: 80%;
         width: calc(~'100% - 50px');
-        &:last-of-type {
+        &:nth-child(2) {
           margin-top: 10px;
           border-left-width: 1px;
 
