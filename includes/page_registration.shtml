@@ -15,10 +15,15 @@
 						<div>
 							<label for="register_as_company_inp" class="ml15 text-info bootstrap-toggle">Do you want to register a company?</label>
 						</div>
-
-
 					</div>
-
+					<div class="clearfix company_registration">
+						<div class="col-sm-4">
+							<div class="form-group validation required">
+								<label>Company name</label>
+								<input type="text" name="company_name" class="form-control" placeholder="Company name">
+							</div>
+						</div>
+					</div>
 					<div class="col-sm-4">
 						<div class="form-group validation required">
 							<label>Name</label>
