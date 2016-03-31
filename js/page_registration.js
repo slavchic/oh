@@ -38,7 +38,7 @@ $(function () {
 
 			company_name: "required",
 
-			country: "required",
+			//country: "required",
 			city: "required",
 			address: "required",
 			zip: "required",
