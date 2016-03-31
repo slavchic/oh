@@ -10,7 +10,7 @@
 					<!---->
 					<div class="col-sm-12 validation form-toggle-group">
 						<div>
-							<input type="checkbox" name="iscompany" checked data-toggle="toggle" data-on="Yes" data-off="No" id="register_as_company_inp">
+							<input type="checkbox" name="iscompany" disabled checked data-toggle="toggle" data-on="Yes" data-off="No" id="register_as_company_inp">
 						</div>
 						<div>
 							<label for="register_as_company_inp" class="ml15 text-info bootstrap-toggle">Do you want to register a company?</label>
