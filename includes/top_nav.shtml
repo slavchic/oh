@@ -4,6 +4,7 @@
 	<!--#if expr="$page=/index/" -->
 	<a class="login fa fa-sign-in" href="#" id="login_btn" data-toggle="login_modal"></a>
 	<!--#else -->
+	<span class="user_name">Hi, Username</span>
 	<span class="user_icon dropdown">
 		<a href="#" data-toggle="dropdown" style="background-image: url(images/userpic_sample.jpg)"></a>
 		<span class="dropdown-menu dropdown-menu-right link-list dark">
