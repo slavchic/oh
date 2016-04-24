@@ -7752,6 +7752,10 @@ h3 + .listing {
   width: 366px;
   padding: 0 15px;
 }
+#main > .container > .row > .left,
+#main > .container > .row > .right {
+  vertical-align: top;
+}
 @media (max-width: 1200px) {
   #main > .container > .row > .left,
   #main > .container > .row > .right {
