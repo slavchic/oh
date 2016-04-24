@@ -8687,6 +8687,9 @@ section .article_list {
   font-size: 19px;
   font-weight: bold;
 }
+.page_listing aside.right > h2 + * {
+  margin-top: -15px;
+}
 .search_box {
   position: relative;
   display: block;

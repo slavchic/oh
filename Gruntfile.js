@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
 					// jquery and extensions
 					'vendor/jquery/jquery-1.11.3.min.js',
-					'vendor/moment/moment.min.js',
+					'js/plugins/moment/moment.min.js',
 
 					//bootstrap
 					'vendor/bootstrap-3.3.6/js/affix.js',

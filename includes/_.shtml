@@ -8,6 +8,8 @@
 	<title>Öffnungszeiten.ch</title>
 
 	<script src="js/main.js"></script>
+	<script src="js/plugins/moment/locale/de.js"></script>
+
 	<script src="js/translations.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&sensor=true&libraries=places&language=de"></script>
 
@@ -17,6 +19,7 @@
 
 	<!--#if expr="$page=/details/" -->
 		<script src="js/plugins/validate/jquery.validate.js"></script>
+		<script src="js/plugins/validate/localization/messages_de.min.js"></script>
 		<script src="js/page_details.js"></script>
 
 		<link rel="stylesheet" href="js/plugins/select2/select2.css"/>
@@ -25,6 +28,7 @@
 
 	<!--#if expr="$page=/registration/" -->
 		<script src="js/plugins/validate/jquery.validate.js"></script>
+	<script src="js/plugins/validate/localization/messages_de.min.js"></script>
 		<!--<script src="js/plugins/validate/localization/messages_de.min.js"></script>-->
 
 		<script src="js/plugins/bootstrap-toggle.min.js"></script>
@@ -37,6 +41,7 @@
 
 	<!--#if expr="$page=/administration/" -->
 		<script src="js/plugins/validate/jquery.validate.js"></script>
+		<script src="js/plugins/validate/localization/messages_de.min.js"></script>
 		<!--<script src="js/plugins/validate/localization/messages_de.min.js"></script>-->
 		<script src="js/plugins/bootstrap-toggle.min.js"></script>
 		<script src="js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
@@ -53,6 +58,7 @@
 		<!--<script src="vendor/bootstrap-calendar-master/js/language/de-DE.js"></script>-->
 		<script src="js/plugins/validate/additional-methods.js"></script>
 		<script src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
+		<script src="js/plugins/fullcalendar/lang/de.js"></script>
 		<link rel="stylesheet" href="js/plugins/fullcalendar/fullcalendar.css"/>
 
 		<script src="js/utils/date_time_interval_builder.js"></script>
