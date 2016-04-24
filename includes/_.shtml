@@ -8,6 +8,7 @@
 	<title>Öffnungszeiten.ch</title>
 
 	<script src="js/main.js"></script>
+	<script src="js/translations.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&sensor=true&libraries=places&language=de"></script>
 
 	<!--#if expr="$page=/index/" -->

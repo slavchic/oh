@@ -194,7 +194,7 @@ $(function () {
 		},
 		customButtons: {
 			addEvent: {
-				text: 'Add event!',
+				text: _translation.addevent,
 				click: eventEditor.interface.open
 			}
 		},
