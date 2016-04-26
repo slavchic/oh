@@ -578,6 +578,7 @@ article {
     //box-shadow: -50px 0 50px -50px rgba(0,0,0,.15) inset;
     @media (max-width: @screen-sm) {
       display: table;
+      table-layout: fixed;
       width: 100%;
       margin-bottom: @grid-gutter-width/2;
       padding: 0;
@@ -610,19 +611,24 @@ article {
     }
     .logo {
       .pr;
-      height: 210px;
+
       padding: 15px;
       margin-bottom: 15px;
       .acenter;
       background-color: #fff;
+      @media (min-width: @screen-md) {
+        height: 210px;
+      }
       img {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        @media (min-width: @screen-md) {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
         margin: auto;
-        max-width: calc(100% - 20px);
+        max-width: calc(~"100% - 30px");
       }
     }
     address {

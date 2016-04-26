@@ -8233,6 +8233,7 @@ section .article_list {
 @media (max-width: 768px) {
   .company_details .infocard {
     display: table;
+    table-layout: fixed;
     width: 100%;
     margin-bottom: 15px;
     padding: 0;
@@ -8265,20 +8266,28 @@ section .article_list {
 }
 .company_details .infocard .logo {
   position: relative;
-  height: 210px;
   padding: 15px;
   margin-bottom: 15px;
   text-align: center;
   background-color: #fff;
 }
+@media (min-width: 992px) {
+  .company_details .infocard .logo {
+    height: 210px;
+  }
+}
 .company_details .infocard .logo img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   margin: auto;
-  max-width: calc(80%);
+  max-width: calc(100% - 30px);
+}
+@media (min-width: 992px) {
+  .company_details .infocard .logo img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 .company_details .infocard address {
   font-size: 17px;
