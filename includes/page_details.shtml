@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<section class="left">
-			<a href="#" class="text-link-lg mt10 pull-right visible-sm visible-md visible-lg report_btn">Wrong openinghours?</a>
+			<!--<a href="#" class="text-link-lg mt10 pull-right visible-sm visible-md visible-lg report_btn">Wrong openinghours?</a>-->
 			<h2 class="title">Long super company name</h2>
 			<div class="company_details_wrapper">
 				<div class="company_details">
@@ -86,7 +86,7 @@
 								</tr>
 							</tbody>
 						</table>
-						<div class="text-center mt15 visible-xs">
+						<div class="text-center mt15">
 							<a href="#" class="text-link-lg report_btn">Wrong openinghours?</a>
 						</div>
 						<div class="about">

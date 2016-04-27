@@ -613,7 +613,7 @@ article {
       .pr;
 
       padding: 15px;
-      margin-bottom: 15px;
+      margin-bottom: @grid-gutter-width;
       .acenter;
       background-color: #fff;
       @media (min-width: @screen-md) {
@@ -641,11 +641,11 @@ article {
       color: @gray-light;
     }
     .status {
-      margin: 0 -15px;
+      margin: -@grid-gutter-width/2 -@grid-gutter-width/2 0;
       .acenter;
       b {
         .db;
-        padding: 10px 30px;
+        padding: 15px 30px;
         color: #fff;
       }
       &.closed b {

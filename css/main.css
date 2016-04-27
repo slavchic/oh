@@ -8267,7 +8267,7 @@ section .article_list {
 .company_details .infocard .logo {
   position: relative;
   padding: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   text-align: center;
   background-color: #fff;
 }
@@ -8299,12 +8299,12 @@ section .article_list {
   color: #777777;
 }
 .company_details .infocard .status {
-  margin: 0 -15px;
+  margin: -15px -15px 0;
   text-align: center;
 }
 .company_details .infocard .status b {
   display: block;
-  padding: 10px 30px;
+  padding: 15px 30px;
   color: #fff;
 }
 .company_details .infocard .status.closed b {
