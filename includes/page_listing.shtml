@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<section class="left">
-			<h2 class="title">Opening hours listing</h2>
+			<h1 class="title">Opening hours listing</h1>
 
 			<div class="listing">
 				<!--#include virtual="listing_item.shtml" -->
@@ -32,7 +32,7 @@
 					</script>
 				</div>
 			</div>
-			<div class="listing">
+			<div class="listing mb30">
 				<!--#set var="company_status" value="open" -->
 					<!--#include virtual="listing_item.shtml" -->
 
@@ -40,6 +40,10 @@
 				<!--#set var="company_status" value="closed" -->
 					<!--#include virtual="listing_item.shtml" -->
 					<!--#include virtual="listing_item.shtml" -->
+				<!--#set var="company_status" value="open" -->
+					<!--#include virtual="listing_item.shtml" -->
+					<!--#include virtual="listing_item.shtml" -->
+
 			</div>
 			<div class="bn visible-xs mb15 mt15">
 				<!-- /179320732/OZ_MR_DE -->
@@ -61,13 +65,7 @@
 					</script>
 				</div>
 			</div>
-			<div class="listing mb30">
-				<!--#set var="company_status" value="open" -->
-					<!--#include virtual="listing_item.shtml" -->
-					<!--#include virtual="listing_item.shtml" -->
-
-			</div>
-			<nav class="mb30">
+			<nav>
 				<ul class="pagination pagination-lg">
 					<li class="disabled">
 						<a href="#" class="fa fa-chevron-left"></a>

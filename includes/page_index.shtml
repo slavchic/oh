@@ -1,12 +1,12 @@
 <div class="top_wrapper">
 	<div class="container">
 		<!--#include virtual="top_nav.shtml" -->
-		<div class="logo at"></div>
+		<div class="logo at">Öffnungszeiten.ch</div>
 	</div>
 </div>
 <div class="search_wrapper">
 	<div class="container">
-		<h2>Looking for opening hours?</h2>
+		<h1>Looking for opening hours?</h1>
 		<form class="search_box" action="listing.shtml">
 			<input type="text" name="what" placeholder="What?"/>
 			<input type="text" name="where" placeholder="Where?"/>

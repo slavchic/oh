@@ -42,6 +42,7 @@ body {
   background-color: @main_bk;
   font-weight: 300;
   font-family: @ff_main;
+  overflow-y: scroll;
   @media (max-width: @screen-xs) {
     font-weight: 400;
   }
@@ -494,7 +495,7 @@ h1, h2, h3 {
       }
     }
   }
-  + nav {
+  ~ nav {
     .db;
     .acenter;
     border-top: 1px solid fade(#000, 10%);
@@ -645,7 +646,7 @@ article {
       .acenter;
       b {
         .db;
-        padding: 15px 30px;
+        padding: 14px 30px;
         color: #fff;
       }
       &.closed b {
@@ -736,6 +737,13 @@ article {
 
 }
 
+.stores_nearby {
+  aside {
+    .title {
+      margin-bottom: @grid-gutter-width/2;
+    }
+  }
+}
 .map {
   .map_cont {
     border: 1px solid @gray-lighter;
@@ -951,6 +959,8 @@ article {
       margin-bottom: -17px;
       background-repeat: no-repeat;
       background-position: center;
+      text-indent: -9999px;
+      overflow: hidden;
       @media (min-width: @screen-sm) {
         &.at {
           background-image: url("../images/logo_at.png");
@@ -1701,7 +1711,13 @@ form {
         text-align: left;
       }
     }
-
+  }
+  &.aside_fixed {
+    position: fixed;
+    left: auto;
+    > div {
+      text-align: left;
+    }
   }
 }
 // utils
@@ -1814,6 +1830,9 @@ form {
     background-color: fade(@google_plus_bk, 80%);
     border-color: fade(@google_plus_bk, 80%);
   }
+}
+.affix {
+  position: fixed;
 }
 
 @keyframes index_bk_ani {

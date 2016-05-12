@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<section class="left">
-			<h2 class="title">Registration</h2>
+			<h1 class="title">Registration</h1>
 
 			<form id="register_form" method="post" action="administration_dashboard.shtml">
 				<div class="basic_registration clearfix">

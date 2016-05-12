@@ -2,7 +2,7 @@
 	<div class="row">
 		<section class="left">
 			<!--<a href="#" class="text-link-lg mt10 pull-right visible-sm visible-md visible-lg report_btn">Wrong openinghours?</a>-->
-			<h2 class="title">Long super company name</h2>
+			<h1 class="title">Long super company name</h1>
 			<div class="company_details_wrapper">
 				<div class="company_details">
 					<div class="infocard">
@@ -101,7 +101,21 @@
 			<!--#include virtual="aside_details.shtml" -->
 		</div>
 	</div>
+
 	<div class="row">
+		<div class="col-md-12 text-center">
+			<!--wideboard -->
+			<script language="JavaScript"> var zflag_nid = "1301";
+			var zflag_cid = "3762";
+			var zflag_sid = "269";
+			var zflag_width = "728";
+			var zflag_height = "90";
+			var zflag_sz = "14"; </script>
+			<script language="JavaScript" src="http://targeting.adwebster.com/jsc/d8/fo.js"></script>
+		</div>
+	</div>
+
+	<div class="row stores_nearby">
 		<div class="left">
 			<h2 class="title">Stores nearby</h2>
 
@@ -110,28 +124,6 @@
 				<!-- randomizing status -->
 				<!--#set var="company_status" value="closed" -->
 				<!--#include virtual="listing_item.shtml" -->
-			</div>
-			<div class="bn visible-xs mb15 mt15">
-				<!-- /179320732/OZ_Banner_Mobile_DE_2 -->
-				<div id='div-gpt-ad-1457974065784-1'>
-					<script type='text/javascript'>
-						googletag.cmd.push(function () {
-							googletag.display('div-gpt-ad-1457974065784-1');
-						});
-					</script>
-				</div>
-			</div>
-			<div class="bn mt30 mb30 visible-lg">
-				<!-- /179320732/OZ_Leaderboard_DE -->
-				<div id='div-gpt-ad-1457974065784-6'>
-					<script type='text/javascript'>
-						googletag.cmd.push(function () {
-							googletag.display('div-gpt-ad-1457974065784-6');
-						});
-					</script>
-				</div>
-			</div>
-			<div class="listing mb30">
 				<!--#include virtual="listing_item.shtml" -->
 				<!--#set var="company_status" value="open" -->
 				<!--#include virtual="listing_item.shtml" -->
@@ -142,7 +134,18 @@
 		</div>
 		<aside class="right hidden-sm hidden-xs"><h2 class="title">&nbsp;</h2>
 
-			<div class="bn right_fixed mt10" data-offset-initial="140" data-offset-end="15">
+			<div class="bn aside_fixed" data-offset-initial="calc" data-offset-end="15">
+				<!-- /179320732/OZ_MR_BIG_DE_2 -->
+				<div id='div-gpt-ad-1457974065784-10'>
+					<script type='text/javascript'>
+						googletag.cmd.push(function () {
+							googletag.display('div-gpt-ad-1457974065784-10');
+						});
+					</script>
+				</div>
+			</div>
+
+			<div class="bn right_fixed" data-offset-initial="140" data-offset-end="15">
 				<!-- /179320732/OZ_Halfpage_DE -->
 				<div id='div-gpt-ad-1457974065784-4'>
 					<script type='text/javascript'>

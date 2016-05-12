@@ -376,7 +376,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 30px;
 }
 h2,
 .h2 {
@@ -7640,6 +7640,7 @@ body {
   background-color: #4b4848;
   font-weight: 300;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", sans-serif;
+  overflow-y: scroll;
 }
 @media (max-width: 480px) {
   body {
@@ -8138,13 +8139,13 @@ h3 + .listing {
     margin-top: -10px;
   }
 }
-.listing + nav {
+.listing ~ nav {
   display: block;
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 768px) {
-  .listing + nav .pagination a {
+  .listing ~ nav .pagination a {
     padding: 6px 12px;
     font-size: 15px;
   }
@@ -8304,7 +8305,7 @@ section .article_list {
 }
 .company_details .infocard .status b {
   display: block;
-  padding: 15px 30px;
+  padding: 14px 30px;
   color: #fff;
 }
 .company_details .infocard .status.closed b {
@@ -8400,6 +8401,9 @@ section .article_list {
 }
 .company_details .about {
   padding: 30px 0;
+}
+.stores_nearby aside .title {
+  margin-bottom: 15px;
 }
 .map .map_cont {
   border: 1px solid #dadada;
@@ -8595,6 +8599,8 @@ section .article_list {
   margin-bottom: -17px;
   background-repeat: no-repeat;
   background-position: center;
+  text-indent: -9999px;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .page_index .top_wrapper .logo.at {
@@ -9298,6 +9304,13 @@ form .form-toggle-group > div:first-child {
     text-align: left;
   }
 }
+.bn.aside_fixed {
+  position: fixed;
+  left: auto;
+}
+.bn.aside_fixed > div {
+  text-align: left;
+}
 .divider_t {
   border-top: 4px solid rgba(0, 0, 0, 0.1);
 }
@@ -9387,6 +9400,9 @@ form .form-toggle-group > div:first-child {
 .btn_google_plus:hover {
   background-color: rgba(215, 61, 50, 0.8);
   border-color: rgba(215, 61, 50, 0.8);
+}
+.affix {
+  position: fixed;
 }
 @keyframes index_bk_ani {
   from {

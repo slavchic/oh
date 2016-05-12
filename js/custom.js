@@ -71,12 +71,33 @@ $(function () {
 	// fixed banner (affix)
 	$(window).on('load scroll', function (e) {
 
-		var $fixed_bn = $('.bn.right_fixed'),
-				offset_top_initial = $fixed_bn.data('offset-initial'),
-				offset_top_end = $fixed_bn.data('offset-end'),
-				offset_top_page = $(this).scrollTop();
+		var $fixed_bns = $('.bn.right_fixed, .bn.aside_fixed');
 
-		$fixed_bn.css('top', (offset_top_page <= offset_top_initial) ? offset_top_initial + offset_top_end - offset_top_page : offset_top_end)
+		$fixed_bns.each(function(i, el){
+			var $bn = $(el),
+					offset_top_initial = $bn.data('offset-initial'),
+					offset_top_end = $bn.data('offset-end'),
+					offset_top_page = $(window).scrollTop(),
+					was_calculated = $bn.data('was-calculated');
+
+			if (offset_top_initial == 'calc' && e.type != 'load') return;
+			if (offset_top_initial == 'calc' && e.type == 'load') {
+				$bn.css('position', 'static')
+				$bn.data('was-calculated', true)
+
+				offset_top_initial = $bn.offset().top;
+				if (offset_top_page <= offset_top_initial - offset_top_end) offset_top_end = 0
+
+				$bn.data('offset-initial', offset_top_initial)
+				$bn.css('position', 'fixed')
+
+			}
+			if (was_calculated && offset_top_page <= offset_top_initial - offset_top_end) offset_top_end = 0
+
+			$bn.css('top', (offset_top_page <= offset_top_initial) ? offset_top_initial + offset_top_end - offset_top_page : offset_top_end)
+
+		})
+
 	})
 
 

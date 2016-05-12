@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<section class="left">
-			<h2 class="title">Our blog</h2>
+			<h1 class="title">Our blog</h1>
 
 			<div class="article_list">
 				<div class="item">
