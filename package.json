@@ -2,7 +2,7 @@
   "devDependencies": {
 
     "grunt": "*",
-	"grunt-contrib-cssmin": "*",
+		"grunt-contrib-cssmin": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-less": "*",
     "grunt-contrib-uglify": "*",

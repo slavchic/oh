@@ -66,8 +66,7 @@ module.exports = function (grunt) {
 		watch: {
 			files: [
 				'less/*.less',
-				'vendor/bootstrap-3.3.6/less/*.less',
-				'vendor/font-awesome-4.5.0/less'
+				'less/**/*.less'
 			],
 			tasks: ['Compile main.less']
 		}
