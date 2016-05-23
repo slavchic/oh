@@ -8332,13 +8332,7 @@ section .article_list {
   }
 }
 .company_details .infocard .bn {
-  display: none;
   padding: 0;
-}
-@media (max-width: 480px) {
-  .company_details .infocard .bn {
-    display: block;
-  }
 }
 .company_details .infocard address h2 {
   margin: 15px 0;
@@ -8465,12 +8459,13 @@ section .article_list {
 .company_details .about {
   padding: 30px 0;
 }
-.stores_nearby aside .title {
-  margin-bottom: 15px;
-}
 .map .map_cont {
-  max-width: 336px;
   border: 1px solid #dadada;
+}
+@media (min-width: 1200px) {
+  .map .map_cont {
+    max-width: 336px;
+  }
 }
 .map > nav {
   display: flex;
@@ -9386,11 +9381,11 @@ form .form-toggle-group > div:first-child {
   text-align: left;
 }
 .visible-xs-min {
-  display: none;
+  display: none !important;
 }
 @media (max-width: 480px) {
   .visible-xs-min {
-    display: inherit;
+    display: inherit !important;
   }
 }
 @media (max-width: 480px) {

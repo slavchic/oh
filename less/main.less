@@ -1,8 +1,8 @@
-@import "less/bootstrap/bootstrap.less";
-@import "less/bootstrap-datetimepicker/bootstrap-datetimepicker-build.less";
-@import "less/select2-bootstrap/select2-bootstrap.less";
-@import "less/bootstrap-toggle/bootstrap-toggle.less";
-@import "less/font-awesome/font-awesome.less";
+@import "bootstrap/bootstrap.less";
+@import "bootstrap-datetimepicker/bootstrap-datetimepicker-build.less";
+@import "select2-bootstrap/select2-bootstrap.less";
+@import "bootstrap-toggle/bootstrap-toggle.less";
+@import "font-awesome/font-awesome.less";
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin,latin-ext);
 
 @main_bk: #4b4848;
@@ -655,11 +655,7 @@ article {
       }
     }
     .bn {
-      display: none;
       padding: 0;
-      @media (max-width: @screen-xs) {
-        display: block;
-      }
     }
     address {
       h2 {
@@ -780,15 +776,17 @@ article {
 }
 
 .stores_nearby {
-  aside {
-    .title {
-      margin-bottom: @grid-gutter-width/2;
-    }
-  }
+//  aside {
+//    .title {
+//      margin-bottom: @grid-gutter-width/2;
+//    }
+//  }
 }
 .map {
   .map_cont {
-    max-width: 336px;
+    @media (min-width: @screen-lg) {
+      max-width: 336px;
+    }
     border: 1px solid @gray-lighter;
   }
   > nav {
@@ -1773,9 +1771,9 @@ form {
 }
 // utils
 .visible-xs-min {
-  display: none;
+  display: none !important;
   @media (max-width: @screen-xs) {
-    display: inherit;
+    display: inherit !important;
   }
 }
 .hidden-xs-min {

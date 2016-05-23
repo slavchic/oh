@@ -85,7 +85,7 @@ $(function () {
 				$bn.css('position', 'static')
 				$bn.data('was-calculated', true)
 
-				offset_top_initial = $bn.offset().top;
+				offset_top_initial = $bn.offset().top - parseInt($bn.css('margin-top'));
 				if (offset_top_page <= offset_top_initial - offset_top_end) offset_top_end = 0
 
 				$bn.data('offset-initial', offset_top_initial)
