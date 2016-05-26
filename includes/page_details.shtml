@@ -31,7 +31,7 @@
 							</address>
 							<p class="phone"><b>+788 999 44 55</b></p>
 							<a href="http://some.com" class="btn btn-default mt15 mr10 hidden-xs-min" target="_blank" rel="nofollow">Open site</a>
-							<a href="#" class="btn btn-primary mt15  hidden-xs-min  send_message_btn">Leave message</a>
+							<a href="#" class="btn btn-primary mt15  hidden-xs-min  location_send_message_btn">Leave message</a>
 
 							<div class="addthis_sharing_toolbox social hidden-xs-min"></div>
 						</div>
@@ -107,7 +107,7 @@
 										<a href="http://some.com" class="btn btn-default btn-block" target="_blank" rel="nofollow">Open site</a>
 									</div>
 									<div class="col-sm-6 mt15">
-										<a href="#" class="btn btn-primary btn-block send_message_btn">Leave message</a></div>
+										<a href="#" class="btn btn-primary btn-block location_send_message_btn">Leave message</a></div>
 								</div>
 								<div class="addthis_sharing_toolbox text-center social mt15"></div>
 							</div>
@@ -171,7 +171,7 @@
 		</div>
 		<aside class="right hidden-sm hidden-xs"><h4 class="title">&nbsp;</h4>
 
-			<div class="bn aside_fixed" data-offset-initial="calc" data-offset-end="30">
+			<div class="bn aside_fixed" data-spy="affix" data-offset-top="calc" data-offset-bottom="580">
 				<!-- /179320732/OZ_MR_BIG_DE_2 -->
 				<div id='div-gpt-ad-1457974065784-10'>
 					<script type='text/javascript'>
@@ -182,7 +182,7 @@
 				</div>
 			</div>
 
-			<div class="bn right_fixed" data-offset-initial="140" data-offset-end="15">
+			<div class="bn right_fixed" data-spy="affix" data-offset-top="185" data-offset-bottom="580">
 				<!-- /179320732/OZ_Halfpage_DE -->
 				<div id='div-gpt-ad-1457974065784-4'>
 					<script type='text/javascript'>

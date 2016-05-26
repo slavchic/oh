@@ -69,36 +69,22 @@ getUserLocation = function (callback_fn) {
 
 $(function () {
 	// fixed banner (affix)
-	$(window).on('load scroll', function (e) {
+	var initAds = function (e) {
 
-		var $fixed_bns = $('.bn.right_fixed, .bn.aside_fixed');
+		var $fixed_bns = $('[data-offset-top="calc"]');
 
-		$fixed_bns.each(function(i, el){
-			var $bn = $(el),
-					offset_top_initial = $bn.data('offset-initial'),
-					offset_top_end = $bn.data('offset-end'),
-					offset_top_page = $(window).scrollTop(),
-					was_calculated = $bn.data('was-calculated');
+		$fixed_bns.each(function (i, el) {
+			var $bn = $(el);
 
-			if (offset_top_initial == 'calc' && e.type != 'load') return;
-			if (offset_top_initial == 'calc' && e.type == 'load') {
-				$bn.css('position', 'static')
-				$bn.data('was-calculated', true)
+				var offset_top_initial = $bn.offset().top - 15;
 
-				offset_top_initial = $bn.offset().top - parseInt($bn.css('margin-top'));
-				if (offset_top_page <= offset_top_initial - offset_top_end) offset_top_end = 0
+				$bn.attr('data-offset-top', offset_top_initial)
 
-				$bn.data('offset-initial', offset_top_initial)
-				$bn.css('position', 'fixed')
-
-			}
-			if (was_calculated && offset_top_page <= offset_top_initial - offset_top_end) offset_top_end = 0
-
-			$bn.css('top', (offset_top_page <= offset_top_initial) ? offset_top_initial + offset_top_end - offset_top_page : offset_top_end)
 
 		})
-
-	})
+	}
+	initAds();
+	//$(window).on('scroll', initAds);
 
 
 	$('#header .search_toggle').click(function (e) {

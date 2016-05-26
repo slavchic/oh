@@ -34,7 +34,7 @@ $(function () {
 		$('#report-modal').modal('show')
 		return false
 	})
-	$('.send_message_btn').click(function () {
+	$('.location_send_message_btn').click(function () {
 		$('#send-message-modal').modal('show')
 		return false
 	})
@@ -71,3 +71,4 @@ $(function () {
 	})
 
 })
+
