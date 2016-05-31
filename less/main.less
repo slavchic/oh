@@ -1,3 +1,5 @@
+@images_path: '../images/';
+
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,latin-ext);
 @import "bootstrap/bootstrap.less";
 @import "bootstrap-datetimepicker/bootstrap-datetimepicker-build.less";
@@ -87,7 +89,7 @@ a {
 
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   margin-bottom: @grid-gutter-width;
   //padding: 0 @grid-gutter-width / 2;
   color: @title_grey;
@@ -280,12 +282,13 @@ h1, h2, h3, h4 {
   padding-top: 40px;
   padding-bottom: 40px;
   color: #fff;
-  h3 {
+  h3, h5 {
     margin: 0 0 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #444;
     font-size: @font-size-base;
     font-weight: bold;
+    text-transform: uppercase;
     color: #fff;
   }
 }
@@ -1024,11 +1027,11 @@ article {
           background-image: url("../images/logo_ch.png");
         }
 
-        &.it {
+        &.it, &.ch-it {
           background-image: url("../images/logo_it.png");
         }
 
-        &.fr {
+        &.fr, &.ch-fr {
           background-image: url("../images/logo_fr.png");
         }
       }
@@ -1531,6 +1534,12 @@ form {
   }
 }
 
+.modal {
+  .modal-title {
+    font-size: @font-size-h3;
+  }
+}
+
 #login_modal {
   .modal-login {
     max-width: 350px;
@@ -1780,6 +1789,7 @@ form {
       .page_details & {
         top: 127px;
       }
+
       left: calc(~"100% - 400px");
       width: 300px;
       &.affix {
@@ -1982,8 +1992,12 @@ form {
     @dl: extract(@directions-labels, @i);
     @v: @n;
 
-    .m@{d}@{v} {margin-@{dl}: unit(@v, px)}
-    .p@{d}@{v} {padding-@{dl}: unit(@v, px)}
+    .m@{d}@{v} {
+      margin-@{dl}: unit(@v, px)
+    }
+    .p@{d}@{v} {
+      padding-@{dl}: unit(@v, px)
+    }
 
     .mp-mx(@n, (@i + 1));
   }
@@ -1993,5 +2007,5 @@ form {
 }
 
 .select2-drop {
-  margin-left: 1px;
+  //margin-left: 1px;
 }

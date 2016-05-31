@@ -13,6 +13,12 @@
 			<div class="row">
 				<div class="col-md-12">
 					<form id="add_company_form" method="post" action="administration_dashboard.shtml">
+						<script>
+							var schedule_data = {
+								'1': [['12:30', '15:55'], ['16:30', '18:55']],
+								'2': [['12:30', '15:55'], ['16:30', '18:55'], ['21:30', '22:55']]
+							}
+						</script>
 						<div class="clearfix mb30" id="add_company_form_intervals"></div>
 						<div class="divider_t clearfix mt20 pt20">
 							<div class="col-sm-12 text-right">
